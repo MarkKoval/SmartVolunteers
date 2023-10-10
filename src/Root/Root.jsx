@@ -275,7 +275,7 @@ function ResponsiveAppBar() {
           paddingTop: "4%",
           bottom: 0,
         }}
-        allowfullscreen=""
+        title="place"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
