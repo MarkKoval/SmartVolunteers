@@ -12,17 +12,12 @@ import {
   CardMedia,
   Grid,
   IconButton,
-  Input,
-  Paper,
   TextField,
-  ThemeProvider,
-  Tooltip,
   Typography,
-  createTheme,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
-import { deepWater, sea, wave, ocean } from "../components/constants";
+import { deepWater, sea, wave } from "../components/constants";
 
 const images = [
   "https://picsum.photos/id/1/1440/900",
@@ -81,7 +76,7 @@ function ResponsiveAppBar() {
             fontFamily: "Nunito",
           }}
         >
-          Join our volunteer community and make a difference in Lviv. <br />{" "}
+          Join our volunteer community and make a difference in Lviv. <br />
           Together we can create a better future.
         </Typography>
         <Button

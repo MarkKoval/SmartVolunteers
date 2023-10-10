@@ -11,8 +11,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Facebook, FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
-import { deepWater, sea, wave, ocean } from "../components/constants";
+import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
+import { deepWater, sea} from "../components/constants";
 
 const pages = ["About Us", "Works", "Contact us"];
 
@@ -22,7 +22,7 @@ function AppBar1() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
