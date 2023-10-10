@@ -13,6 +13,8 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
 import { deepWater, sea} from "../components/constants";
+import {ReactComponent as Icon} from "./icon1.svg"
+
 
 const pages = ["About Us", "Works", "Contact us"];
 
@@ -22,7 +24,7 @@ function AppBar1() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -33,8 +35,9 @@ function AppBar1() {
     }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
+          {/* <Icon/> */}
+          <Icon sx={{ display: { xs: "none", md: "flex" }, mr: 1}} style={{ height:"4rem", width:"auto"}} />
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -50,7 +53,7 @@ function AppBar1() {
             }}
           >
             Smart Volunteers
-          </Typography>
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -105,7 +108,7 @@ function AppBar1() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
