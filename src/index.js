@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ResponsiveAppBar from './Root/Root';
+import App from './Root/Root';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   <React.StrictMode>
-    <ResponsiveAppBar />
+    <App />
   </React.StrictMode>
 );
 

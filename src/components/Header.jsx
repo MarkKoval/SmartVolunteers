@@ -11,14 +11,14 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
-import { deepWater, sea} from "../components/constants";
-import {ReactComponent as Icon} from "./icon1.svg"
+import { deepWater, sea} from "./constants";
+import {ReactComponent as Icon} from "./icon.svg"
 
 
 const pages = ["About Us", "Works", "Contact us"];
 
 
-function AppBar1() {
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -34,24 +34,6 @@ function AppBar1() {
     }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <Icon sx={{ display: { xs: "none", md: "flex" }, mr: 1}} style={{ height:"4rem", width:"auto"}} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: [sea],
-              textDecoration: "none",
-            }}
-          >
-            Smart Volunteers
-          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -89,7 +71,7 @@ function AppBar1() {
               ))}
             </Menu>
           </Box>
-          <Icon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} style={{ height:"4rem", width:"auto"}}/>
+          <Icon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} style={{ height:"3rem", width:"auto"}}/>
           <Typography
             variant="h5"
             noWrap
@@ -141,4 +123,4 @@ function AppBar1() {
     </AppBar>
   );
 }
-export default AppBar1;
+export default Header;
