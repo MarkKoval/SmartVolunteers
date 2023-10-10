@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
 import { deepWater, sea} from "../components/constants";
-import {ReactComponent as Icon} from "./icon.svg"
+import {ReactComponent as Icon} from "./icon1.svg"
 
 
 const pages = ["About Us", "Works", "Contact us"];
@@ -35,8 +35,8 @@ function AppBar1() {
     }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Icon sx={{ display: { xs: "none", md: "flex" }, mr: 1}} style={{ height:"4rem", width:"auto"}} />
-          {/* <Typography
+          {/* <Icon sx={{ display: { xs: "none", md: "flex" }, mr: 1}} style={{ height:"4rem", width:"auto"}} />
+          <Typography
             variant="h6"
             noWrap
             component="a"
@@ -90,7 +90,7 @@ function AppBar1() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <Icon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} style={{ height:"4rem", width:"auto"}}/>
           <Typography
             variant="h5"
             noWrap

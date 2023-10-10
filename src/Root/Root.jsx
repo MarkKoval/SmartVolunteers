@@ -18,6 +18,7 @@ import {
 import { useForm } from "react-hook-form";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
 import { deepWater, sea, wave } from "../components/constants";
+import {ReactComponent as Logo} from "./SM.svg"
 
 const images = [
   "https://picsum.photos/id/1/1440/900",
@@ -375,7 +376,7 @@ function ResponsiveAppBar() {
                   fontSize: "18px",
                   fontFamily: "Nunito",
                   paddingTop: "1%",
-                  color: [deepWater],
+                  color: [sea],
                 }}
               >
                 Fill out the from below to get in touch with us. We are here to
@@ -401,9 +402,10 @@ function ResponsiveAppBar() {
             justifyContent="flex-start"
             alignItems="center"
           >
-            <Typography variant="h4" align="left" color={deepWater}>
+            {/* <Typography variant="h4" align="left" color={deepWater}>
               Smart Volunteers
-            </Typography>
+            </Typography> */}
+            <Logo style={{ height:"8rem", width:"auto"}} />
           </Grid>
           <Grid xs={2}></Grid>
           <Grid
