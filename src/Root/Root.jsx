@@ -11,12 +11,18 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  IconButton,
+  Input,
+  Paper,
+  TextField,
+  ThemeProvider,
+  Tooltip,
   Typography,
+  createTheme,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
-
-
-
+import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
+import { deepWater, sea, wave, ocean } from "../components/constants";
 
 const images = [
   "https://picsum.photos/id/1/1440/900",
@@ -36,7 +42,6 @@ const urls = [
 ];
 
 function ResponsiveAppBar() {
-
   const {
     register,
     handleSubmit,
@@ -52,7 +57,8 @@ function ResponsiveAppBar() {
         sx={{
           height: "800px",
           backgroundSize: "cover",
-          backgroundImage: `url("https://picsum.photos/id/4/1440/900")`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("https://picsum.photos/id/4/1440/900")`,
+          loading: "lazy",
         }}
       >
         <Typography
@@ -60,7 +66,7 @@ function ResponsiveAppBar() {
             paddingLeft: "10%",
             paddingTop: "10%",
             fontSize: "60px",
-            color: "white",
+            color: [sea],
             fontFamily: "Nunito",
           }}
         >
@@ -71,7 +77,7 @@ function ResponsiveAppBar() {
             paddingLeft: "10%",
             paddingTop: "40px",
             fontSize: "40px",
-            color: "white",
+            color: [sea],
             fontFamily: "Nunito",
           }}
         >
@@ -80,13 +86,16 @@ function ResponsiveAppBar() {
         </Typography>
         <Button
           variant="contained"
-          sx={{
-            borderRadius: "10px",
+          style={{
+            background: [sea],
             marginLeft: "10%",
             marginTop: "20px",
             fontSize: "20px",
             fontFamily: "Nunito",
+            color: "black",
+            borderRadius: "1rem",
           }}
+          type="submit"
         >
           Join Now
         </Button>
@@ -94,6 +103,7 @@ function ResponsiveAppBar() {
       <Box paddingTop="2%" paddingBottom="2%">
         <Typography
           sx={{
+            color: [deepWater],
             textAlign: "center",
             paddingLeft: "20%",
             paddingRight: "20%",
@@ -143,11 +153,22 @@ function ResponsiveAppBar() {
                   }}
                   image="https://picsum.photos/id/10/500/500"
                 />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h4" component="h1">
+                <CardContent sx={{ flexGrow: 1, color: [deepWater] }}>
+                  <Typography
+                    gutterBottom
+                    variant="h4"
+                    component="h1"
+                    fontFamily="Nunito"
+                  >
                     Community Support
                   </Typography>
-                  <Typography gutterBottom variant="h6" component="h1">
+                  <Typography
+                    color={deepWater}
+                    gutterBottom
+                    variant="h6"
+                    component="h1"
+                    fontFamily="Nunito"
+                  >
                     Make a difference in your local community by volunteering
                     for various initiatives and projects.
                   </Typography>
@@ -163,7 +184,9 @@ function ResponsiveAppBar() {
           paddingTop: "5%",
         }}
       >
-        <Typography sx={{ fontSize: "40px", fontFamily: "Nunito" }}>
+        <Typography
+          sx={{ fontSize: "40px", fontFamily: "Nunito", color: [deepWater] }}
+        >
           Recent Work
         </Typography>
       </Box>
@@ -216,16 +239,28 @@ function ResponsiveAppBar() {
           paddingTop: "4%",
         }}
       >
-        <Typography sx={{ fontSize: "40px", fontFamily: "Nunito" }}>
+        <Typography
+          sx={{ fontSize: "40px", fontFamily: "Nunito", color: [deepWater] }}
+        >
           About us
         </Typography>
         <Typography
-          sx={{ fontSize: "18px", fontFamily: "Nunito", paddingTop: "1%" }}
+          sx={{
+            fontSize: "18px",
+            fontFamily: "Nunito",
+            paddingTop: "1%",
+            color: [deepWater],
+          }}
         >
           Welcome to Smart Volunteers!
         </Typography>
         <Typography
-          sx={{ fontSize: "18px", fontFamily: "Nunito", paddingTop: "1%" }}
+          sx={{
+            fontSize: "18px",
+            fontFamily: "Nunito",
+            paddingTop: "1%",
+            color: [deepWater],
+          }}
         >
           We are dedicated volunteer organization located in Lviv, "ADRESS". Our
           mission is to connect passionate individuals with
@@ -243,32 +278,165 @@ function ResponsiveAppBar() {
         style={{
           border: "none",
           paddingTop: "4%",
+          bottom: 0,
         }}
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
 
-      
+      <Box
+        sx={{ bgcolor: [wave], paddingTop: 12, paddingBottom: 6 }}
+        component="footer"
+      >
+        <Grid container spacing={3}>
+          {/* First Column */}
+          <Grid item xs={1}></Grid>
+          <Grid item xs={4}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              {/* First Row in First Column */}
+              <Grid container spacing={4}>
+                <Grid item xs={6}>
+                  <TextField
+                    InputProps={{
+                      style: {
+                        color: [deepWater],
+                        borderRadius: "40px",
+                      },
+                    }}
+                    margin="normal"
+                    fullWidth
+                    label="Name"
+                    id="outlined-basic"
+                    type="text"
+                    {...register("Name", {})}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <TextField
+                    InputProps={{
+                      style: {
+                        borderRadius: "40px",
+                      },
+                    }}
+                    margin="normal"
+                    fullWidth
+                    label="E-mail"
+                    id="outlined-basic"
+                    variant="outlined"
+                    type="email"
+                    {...register("E-mail", {})}
+                  />
+                </Grid>
+              </Grid>
+              {/* Second Row in First Column */}
+              <Grid item xs={12}>
+                <TextField
+                  InputProps={{
+                    style: {
+                      borderRadius: "40px",
+                    },
+                  }}
+                  margin="normal"
+                  height="10rem"
+                  multiline
+                  fullWidth
+                  label="Message"
+                  id="outlined-basic"
+                  variant="outlined"
+                  type="text"
+                  {...register("Message", {})}
+                />
+              </Grid>
+              {/* Third Row in First Column */}
+              <Grid item xs={12} textAlign="center" marginTop="1rem">
+                <Button
+                  variant="contained"
+                  type="submit"
+                  style={{
+                    background: [sea],
+                    color: "black",
+                    borderRadius: "1rem",
+                  }}
+                >
+                  Send
+                </Button>
+              </Grid>
+            </form>
+          </Grid>
+          <Grid item xs={1}></Grid>
+          {/* Second Column */}
+          <Grid item xs={6} container direction="row" alignItems="Center">
+            <Typography
+              sx={{
+                fontSize: "40px",
+                fontFamily: "Nunito",
+                color: [deepWater],
+              }}
+            >
+              Contact Us Now
+              <Typography
+                sx={{
+                  fontSize: "18px",
+                  fontFamily: "Nunito",
+                  paddingTop: "1%",
+                  color: [deepWater],
+                }}
+              >
+                Fill out the from below to get in touch with us. We are here to
+                answer any
+                <br /> questions you may have and provide the support you need.
+              </Typography>
+            </Typography>
+          </Grid>
+        </Grid>
 
-      <Box sx={{ bgcolor: "#FF6F91", p: 6 }} component="footer">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Name" {...register} />
-        <input type="email" placeholder="E-mail" {...register("E-mail", {})} />
-        <input type="text" placeholder="Message" {...register("Message", {})} />
-
-        <Button variant="contained" type="submit">Sumbit</Button>
-      </form>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
+        <Grid
+          container
+          spacing={3}
+          marginTop="5rem"
+          marginBottom="0"
+          paddingBottom="0"
         >
-          Something here to give the footer a purpose!
+          <Grid xs={1} />
+          <Grid
+            xs={4}
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+          >
+            <Typography variant="h4" align="left" color={deepWater}>
+              Smart Volunteers
+            </Typography>
+          </Grid>
+          <Grid xs={2}></Grid>
+          <Grid
+            xs={4}
+            container
+            direction="row"
+            justifyContent="flex-end"
+            alignItems="center"
+          >
+            <IconButton
+              sx={{ p: 0, marginLeft: "10px" }}
+              href="https://www.instagram.com/_vovk.mark_/"
+            >
+              <Instagram sx={{ fontSize: "60", color: [deepWater] }} />
+            </IconButton>
+            <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+              <Telegram sx={{ fontSize: "60", color: [deepWater] }} />
+            </IconButton>
+            <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+              <FacebookOutlined sx={{ fontSize: "60", color: [deepWater] }} />
+            </IconButton>
+          </Grid>
+          <Grid xs={1} />
+        </Grid>
+
+        <Typography variant="body2" align="center" gutterBottom color={deepWater}>
+          &copy; {new Date().getFullYear()} Smart Volunteers. All rights
+          reserved.
         </Typography>
       </Box>
     </Box>

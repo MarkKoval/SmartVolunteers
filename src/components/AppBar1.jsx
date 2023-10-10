@@ -12,8 +12,10 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Facebook, FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
+import { deepWater, sea, wave, ocean } from "../components/constants";
 
 const pages = ["About Us", "Works", "Contact us"];
+
 
 function AppBar1() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,7 +28,9 @@ function AppBar1() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{
+      background: [deepWater]
+    }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -41,7 +45,7 @@ function AppBar1() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: [sea],
               textDecoration: "none",
             }}
           >
@@ -55,7 +59,7 @@ function AppBar1() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color={sea}
             >
               <MenuIcon />
             </IconButton>
@@ -97,7 +101,7 @@ function AppBar1() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: [sea],
               textDecoration: "none",
             }}
           >
@@ -108,7 +112,7 @@ function AppBar1() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: [sea], display: "block" }}
               >
                 {page}
               </Button>
@@ -121,13 +125,13 @@ function AppBar1() {
                 sx={{ p: 0, marginLeft: "10px" }}
                 href="https://www.instagram.com/_vovk.mark_/"
               >
-                <Instagram sx={{ fontSize: "60", color: "white" }} />
+                <Instagram sx={{ fontSize: "60", color: [sea] }} />
               </IconButton>
               <IconButton sx={{ p: 0, marginLeft: "10px" }}>
-                <Telegram sx={{ fontSize: "60", color: "white" }} />
+                <Telegram sx={{ fontSize: "60", color: [sea] }} />
               </IconButton>
               <IconButton sx={{ p: 0, marginLeft: "10px" }}>
-                <FacebookOutlined sx={{ fontSize: "60", color: "white" }} />
+                <FacebookOutlined sx={{ fontSize: "60", color: [sea] }} />
               </IconButton>
             </Tooltip>
           </Box>
