@@ -15,7 +15,7 @@ import { deepWater, sea} from "./constants";
 import {ReactComponent as Icon} from "./icon.svg"
 
 
-const pages = ["About Us", "Works", "Contact us"];
+const pages = ["Works", "About Us", "Contact us"];
 
 
 function Header() {
