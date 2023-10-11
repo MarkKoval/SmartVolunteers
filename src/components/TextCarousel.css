@@ -1,0 +1,19 @@
+.stage-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.stage-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+
+.stage-dot.active {
+  background-color: black;
+}

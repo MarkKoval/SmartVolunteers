@@ -6,6 +6,7 @@ import image5 from "../components/images/5.png";
 import image6 from "../components/images/6.png";
 
 export const images = [image1, image2, image3, image4, image5, image6];
+export const IntervalDuration = 3500;
 
 export const ocean = "#07575b";
 export const wave = "#66a5ad";

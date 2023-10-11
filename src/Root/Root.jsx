@@ -1,5 +1,5 @@
 import * as React from "react";
-// import ImageCarousel from "../components/image_carousel";
+
 import Header from "../components/Header";
 import { Box } from "@mui/material";
 import TopText from "../components/TopText";
@@ -8,9 +8,17 @@ import Cards from "../components/Cards";
 import FooterBox from "../components/footer";
 import Map from "../components/map";
 import AboutUs from "../components/AboutUs";
-// import { images } from "../components/constants";
 import RecentWorksText from "../components/RecentWorksText";
 import RecentWorks from "../components/RecentWorks";
+import TextCarousel from "../components/textcarousel";
+// import { texts } from "../components/constants";
+
+// const texts = [
+//   "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+//   "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+// ];
+
 
 export default function App() {
   return (
@@ -21,9 +29,9 @@ export default function App() {
       <Cards />
       <RecentWorksText />
       <RecentWorks />
-      {/* <Box paddingTop="2%" paddingBottom="2%">
-        <ImageCarousel images={images} />
-      </Box> */}
+      <Box paddingTop="2%" paddingBottom="2%">
+        <TextCarousel/>
+      </Box>
       <AboutUs />
       <Map />
       <FooterBox />
