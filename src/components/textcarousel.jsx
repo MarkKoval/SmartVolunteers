@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import { Button, Grid, Paper, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import "./TextCarousel.css"; // Import your CSS file with styles
 
@@ -66,34 +66,54 @@ const TextCarousel = () => {
         sm={8}
         md={6}
         container
-        justifyContent="center"
+        justifyContent="space-between"
         alignItems="center"
+        flexDirection="row"
       >
-        <Button
-          onClick={handlePrev}
-          startIcon={<NavigateBefore />}
-          style={{
-            color: "black",
-          }}
-        ></Button>
-        <Paper elevation={3} style={{ padding: "20px", borderRadius: "15px" }}>
-          <Typography
-            variant="h5"
+        <Grid xs={1}>
+          <Button
+            onClick={handlePrev}
+            startIcon={<NavigateBefore />}
             style={{
-              textAlign: "center",
-              opacity: isAnimating ? 0 : 1,
-              transition: "opacity 1s ease",
+              color: "black",
             }}
-            dangerouslySetInnerHTML={{ __html: currentMessage }}
-          />
-        </Paper>
-        <Button
-          onClick={handleNext}
-          endIcon={<NavigateNext />}
-          style={{
-            color: "black",
-          }}
-        ></Button>
+          ></Button>
+        </Grid>
+        <Grid xs={10}>
+          <Box
+            elevation={3}
+            style={{ padding: "20px", borderRadius: "15px" }}
+          >
+            <Typography
+              variant="h5"
+              style={{
+                fontFamily:"Nunito",
+                textAlign: "center",
+                opacity: isAnimating ? 0 : 1,
+                transition: "opacity 1s ease",
+              }}
+              dangerouslySetInnerHTML={{ __html: currentMessage }}
+            />
+          </Box>
+          <div className="stage-dots">
+            {messages.map((_, index) => (
+              <span
+                key={index}
+                className={`stage-dot ${currentTextIndex === index ? "active" : ""}`}
+                onClick={() => setCurrentTextIndex(index)}
+              />
+            ))}
+          </div>
+        </Grid>
+        <Grid xs={1}>
+          <Button
+            onClick={handleNext}
+            endIcon={<NavigateNext />}
+            style={{
+              color: "black",
+            }}
+          ></Button>
+        </Grid>
       </Grid>
     </Grid>
   );

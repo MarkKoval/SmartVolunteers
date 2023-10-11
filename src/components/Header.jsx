@@ -15,7 +15,7 @@ import { deepWater, sea} from "./constants";
 import {ReactComponent as Icon} from "./icon.svg"
 
 
-const pages = ["Works", "About Us", "Contact us"];
+const pages = ["Works", "About", "Contact"];
 
 
 function Header() {
@@ -66,7 +66,7 @@ function Header() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" fontFamily="Nunito">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>

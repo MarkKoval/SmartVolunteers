@@ -6,6 +6,7 @@ export default function Introducing() {
     <Box paddingTop="2%" paddingBottom="2%">
       <Typography
         sx={{
+          
           color: [deepWater],
           textAlign: "center",
           paddingLeft: "20%",

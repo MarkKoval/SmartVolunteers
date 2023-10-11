@@ -87,9 +87,11 @@ export default function FooterBox() {
             {/* Third Row in First Column */}
             <Grid item xs={12} textAlign="center" marginTop="1rem">
               <Button
+              
                 variant="contained"
                 type="submit"
                 style={{
+                  width:"6rem",
                   background: [sea],
                   color: "black",
                   borderRadius: "1rem",
