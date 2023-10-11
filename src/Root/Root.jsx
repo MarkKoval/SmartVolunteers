@@ -11,14 +11,6 @@ import AboutUs from "../components/AboutUs";
 import RecentWorksText from "../components/RecentWorksText";
 import RecentWorks from "../components/RecentWorks";
 import TextCarousel from "../components/textcarousel";
-// import { texts } from "../components/constants";
-
-// const texts = [
-//   "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-//   "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-// ];
-
 
 export default function App() {
   return (
