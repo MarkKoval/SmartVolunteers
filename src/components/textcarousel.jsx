@@ -15,7 +15,7 @@ I've had the privilege of witnessing Smart Volunteers in action, and I must say,
 `;
 
 const message3 = `
-Smart Volunteers is a shining example of what can be achieved when a group of people with a shared mission and a lot of heart join forces. Lviv is undoubtedly a better place thanks to their tireless efforts. I'm continually amazed by the kindness and selflessness of the Smart Volunteers team. Thank you for your extraordinary work!<br /><br />
+Smart Volunteers is an example of what can be achieved when a group of people with a shared mission and a lot of heart join forces. Lviv is undoubtedly a better place thanks to their tireless efforts. I'm continually amazed by the kindness and selflessness of the Smart Volunteers team. Thank you for your extraordinary work!<br /><br />
   <div style="text-align: center;">— Maria</div>
 `;
 
