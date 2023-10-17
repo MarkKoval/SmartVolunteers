@@ -35,6 +35,8 @@ const loadingMarkup = (
   </div>
 );
 
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Suspense slowfallback={loadingMarkup} >

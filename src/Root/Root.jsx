@@ -11,11 +11,26 @@ import AboutUs from "../components/AboutUs";
 import RecentWorksText from "../components/RecentWorksText";
 import RecentWorks from "../components/RecentWorks";
 import TextCarousel from "../components/textcarousel";
+import { ThemeProvider } from "styled-components";
+import { createTheme } from "@mui/system";
 
 
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xxs: 0, // small phone
+      xs: 300, // phone
+      sm: 600, // tablets
+      md: 900, // small laptop
+      lg: 1200, // desktop
+      xl: 1536 // large screens
+    }
+  }
+});
 
 export default function App() {
   return (
+    <ThemeProvider theme={theme}>
     <Box position="static">
       <Header />
       <TopText />
@@ -30,5 +45,6 @@ export default function App() {
       <Map />
       <FooterBox />
     </Box>
+    </ThemeProvider>
   );
 }

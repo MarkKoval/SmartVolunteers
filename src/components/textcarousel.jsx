@@ -16,12 +16,12 @@ I've had the privilege of witnessing Smart Volunteers in action, and I must say,
 `;
 
 const message3 = `
-Smart Volunteers is an example of what can be achieved when a group of people with a shared mission and a lot of heart join forces. Lviv is undoubtedly a better place thanks to their tireless efforts. I'm continually amazed by the kindness and selflessness of the Smart Volunteers team. Thank you for your extraordinary work!<br /><br />
+Its an example of what can be achieved when a group of people with a shared mission and a lot of heart join forces. Lviv is undoubtedly a better place thanks to their tireless efforts. I'm continually amazed by the kindness and selflessness of the Smart Volunteers team. Thank you for your extraordinary work!<br /><br />
   <div style="text-align: center;">— Maria</div>
 `;
 
 const TextCarousel = () => {
-  const { t } = useTranslation  ()
+  const { t } = useTranslation();
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const messages = [message1, message2, message3];
@@ -81,15 +81,15 @@ const TextCarousel = () => {
             }}
           ></Button>
         </Grid>
-        <Grid xs={10}>
-          <Box
-            elevation={3}
-            style={{ padding: "20px", borderRadius: "15px" }}
-          >
+        <Grid xs={10} sx={{height:"300px" }}>
+          <Box elevation={3} style={{ padding: "20px", borderRadius: "15px", }}>
             <Typography
-              variant="h5"
+              sx={{
+                fontSize: { xs: "17px", lg: "24px" },
+                wordBreak:"break-word"
+              }}
               style={{
-                fontFamily:"Nunito",
+                fontFamily: "Nunito",
                 textAlign: "center",
                 opacity: isAnimating ? 0 : 1,
                 transition: "opacity 1s ease",
@@ -101,7 +101,9 @@ const TextCarousel = () => {
             {messages.map((_, index) => (
               <span
                 key={index}
-                className={`stage-dot ${currentTextIndex === index ? "active" : ""}`}
+                className={`stage-dot ${
+                  currentTextIndex === index ? "active" : ""
+                }`}
                 onClick={() => setCurrentTextIndex(index)}
               />
             ))}

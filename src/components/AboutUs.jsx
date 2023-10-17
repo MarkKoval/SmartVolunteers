@@ -3,41 +3,46 @@ import { deepWater } from "./constants";
 import { useTranslation } from "react-i18next";
 
 export default function AboutUs() {
-  const { t } = useTranslation  ()
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
-        paddingLeft: "10%",
+        paddingLeft: { xs: "4%", md: "10%", lg:"10%" },
+        paddingRight: { xs: "4%", md: "10%", lg:"10%" },
         paddingTop: "4%",
       }}
     >
       <Typography
-        sx={{ fontSize: "40px", fontFamily: "Nunito", color: [deepWater] }}
+        sx={{
+          fontSize: { xs: "35px", lg: "40px" },
+          fontFamily: "Nunito",
+          color: [deepWater],
+        }}
       >
-        {t('about_us')}
+        {t("about_us")}
       </Typography>
       <Typography
         sx={{
-          fontSize: "18px",
+          fontSize: { xs: "18px", md: "15px", lg: "22px" },
           fontFamily: "Nunito",
           paddingTop: "1%",
           color: [deepWater],
         }}
       >
-        {t('welcome')}
+        {t("welcome")}
       </Typography>
       <Typography
         sx={{
-          fontSize: "18px",
+          fontSize: { xs: "18px", md: "15px", lg: "22px" },
           fontFamily: "Nunito",
           paddingTop: "1%",
           color: [deepWater],
         }}
       >
         {t("welcome_text_1")}
-        <br />
+        {/* Fix It */}
         {t("welcome_text_2")}
-        <br /> {t("welcome_text_3")}
+        {t("welcome_text_3")}
       </Typography>
     </Box>
   );

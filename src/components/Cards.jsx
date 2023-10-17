@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 import CardImage1 from "../components/CardImages/1.png";
 import CardImage2 from "../components/CardImages/2.png";
 import CardImage3 from "../components/CardImages/3.png";
+import { textAlign } from "@mui/system";
 
 export default function Cards() {
   const { t } = useTranslation();
@@ -46,11 +47,19 @@ export default function Cards() {
               }}
               image={CardImage1}
             />
-            <CardContent sx={{ flexGrow: 1, color: [deepWater] }}>
+            <CardContent
+              sx={{
+                flexGrow: 1,
+                color: [deepWater],
+                textAlign: { xs: "center", lg: "left" },
+              }}
+            >
               <Typography
                 gutterBottom
-                variant="h4"
-                component="h1"
+                sx={{
+                  fontSize: { xs: "32px", lg: "34px" },
+                  fontWeight: { xs: "500" },
+                }}
                 fontFamily="Nunito"
               >
                 {t("community_support")}
@@ -58,8 +67,10 @@ export default function Cards() {
               <Typography
                 color={deepWater}
                 gutterBottom
-                variant="h6"
-                component="h1"
+                sx={{
+                  fontSize: { xs: "20px", lg: "20px" },
+                  fontWeight: { xs: "400", lg: "400" },
+                }}
                 fontFamily="Nunito"
               >
                 {t("community_support_describe")}
@@ -83,11 +94,19 @@ export default function Cards() {
               }}
               image={CardImage2}
             />
-            <CardContent sx={{ flexGrow: 1, color: [deepWater] }}>
+            <CardContent
+              sx={{
+                flexGrow: 1,
+                color: [deepWater],
+                textAlign: { xs: "center", lg: "left" },
+              }}
+            >
               <Typography
                 gutterBottom
-                variant="h4"
-                component="h1"
+                sx={{
+                  fontSize: { xs: "30px", lg: "34px" },
+                  fontWeight: { xs: "500" },
+                }}
                 fontFamily="Nunito"
               >
                 {t("environmental_conservation")}
@@ -95,8 +114,10 @@ export default function Cards() {
               <Typography
                 color={deepWater}
                 gutterBottom
-                variant="h6"
-                component="h1"
+                sx={{
+                  fontSize: { xs: "20px", lg: "20px" },
+                  fontWeight: { xs: "400", lg: "400" },
+                }}
                 fontFamily="Nunito"
               >
                 {t("environmental_conservation_describe")}
@@ -120,20 +141,30 @@ export default function Cards() {
               }}
               image={CardImage3}
             />
-            <CardContent sx={{ flexGrow: 1, color: [deepWater] }}>
+            <CardContent
+              sx={{
+                flexGrow: 1,
+                color: [deepWater],
+                textAlign: { xs: "center", lg: "left" },
+              }}
+            >
               <Typography
+                sx={{
+                  fontSize: { xs: "32px", lg: "34px" },
+                  fontWeight: { xs: "500" },
+                }}
                 gutterBottom
-                variant="h4"
-                component="h1"
                 fontFamily="Nunito"
               >
                 {t("aducation_assistance")}
               </Typography>
               <Typography
+                sx={{
+                  fontSize: { xs: "20px", lg: "20px" },
+                  fontWeight: { xs: "400", lg: "400" },
+                }}
                 color={deepWater}
                 gutterBottom
-                variant="h6"
-                component="h1"
                 fontFamily="Nunito"
               >
                 {t("aducation_assistance_describe")}
