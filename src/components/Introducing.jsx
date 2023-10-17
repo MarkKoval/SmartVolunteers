@@ -1,7 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { deepWater } from "./constants";
+import { useTranslation } from "react-i18next";
 
 export default function Introducing() {
+  const { t } = useTranslation  ()
   return (
     <Box paddingTop="2%" paddingBottom="2%">
       <Typography
@@ -16,14 +18,7 @@ export default function Introducing() {
           fontFamily: "Nunito",
         }}
       >
-        Introducing Smart Volunteers, the leading platform connecting volunteers
-        with meaningful opportunities in the Lviv community. We understand the
-        imporrance of giving back and bealive that everyone has the power to
-        make a difference. With our user-friendly interface and extensive
-        network of organizations, finding the perfect volunteer role has has
-        never been easier. Join us today and become a part of community
-        dedicated to make a positive impact.
-        <br /> Smart Volunteers: Where passion meets purpose.
+        {t('introducing')}
       </Typography>
     </Box>
   );

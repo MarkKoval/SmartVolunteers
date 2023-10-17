@@ -1,7 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { deepWater } from "./constants";
+import { useTranslation } from "react-i18next";
 
 export default function AboutUs() {
+  const { t } = useTranslation  ()
   return (
     <Box
       sx={{
@@ -12,7 +14,7 @@ export default function AboutUs() {
       <Typography
         sx={{ fontSize: "40px", fontFamily: "Nunito", color: [deepWater] }}
       >
-        About us
+        {t('about_us')}
       </Typography>
       <Typography
         sx={{
@@ -22,7 +24,7 @@ export default function AboutUs() {
           color: [deepWater],
         }}
       >
-        Welcome to Smart Volunteers!
+        {t('welcome')}
       </Typography>
       <Typography
         sx={{
@@ -32,12 +34,10 @@ export default function AboutUs() {
           color: [deepWater],
         }}
       >
-        We are dedicated volunteer organization located in Lviv, "ADRESS". Our
-        mission is to connect passionate individuals with
+        {t("welcome_text_1")}
         <br />
-        meaningful volunteer opportunities. With a strong commitment to making a
-        positive impact in our community, we strive
-        <br /> to create a better world through volunteerism.
+        {t("welcome_text_2")}
+        <br /> {t("welcome_text_3")}
       </Typography>
     </Box>
   );

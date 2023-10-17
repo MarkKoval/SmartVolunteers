@@ -1,8 +1,10 @@
 import { Box, Button, Typography } from "@mui/material";
 import { sea } from "../components/constants";
 import backgroundImage from "./background.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function TopText() {
+  const { t } = useTranslation()
   return (
     <Box
       sx={{
@@ -21,7 +23,7 @@ export default function TopText() {
           fontFamily: "Nunito",
         }}
       >
-        Make an Impact
+        {t('toptext')}
       </Typography>
       <Typography
         sx={{
@@ -32,8 +34,7 @@ export default function TopText() {
           fontFamily: "Nunito",
         }}
       >
-        Join our volunteer community and make a difference in Lviv. <br />
-        Together we can create a better future.
+        {t('toptext_describe_1')}<br/>{t('toptext_describe_2')}
       </Typography>
       <Button
         variant="contained"
@@ -48,7 +49,7 @@ export default function TopText() {
         }}
         type="submit"
       >
-        Join Now
+        {t('join_button')}
       </Button>
     </Box>
   );

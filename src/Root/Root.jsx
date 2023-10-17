@@ -12,6 +12,8 @@ import RecentWorksText from "../components/RecentWorksText";
 import RecentWorks from "../components/RecentWorks";
 import TextCarousel from "../components/textcarousel";
 
+
+
 export default function App() {
   return (
     <Box position="static">
@@ -22,7 +24,7 @@ export default function App() {
       <RecentWorksText />
       <RecentWorks />
       <Box paddingTop="2%" paddingBottom="2%">
-        <TextCarousel/>
+        <TextCarousel />
       </Box>
       <AboutUs />
       <Map />

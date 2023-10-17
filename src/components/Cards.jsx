@@ -7,12 +7,14 @@ import {
   Typography,
 } from "@mui/material";
 import { deepWater } from "./constants";
+import { useTranslation } from "react-i18next";
 
 import CardImage1 from "../components/CardImages/1.png";
 import CardImage2 from "../components/CardImages/2.png";
 import CardImage3 from "../components/CardImages/3.png";
 
 export default function Cards() {
+  const { t } = useTranslation();
   return (
     <Container
       sx={{
@@ -51,7 +53,7 @@ export default function Cards() {
                 component="h1"
                 fontFamily="Nunito"
               >
-                Community Support
+                {t("community_support")}
               </Typography>
               <Typography
                 color={deepWater}
@@ -60,9 +62,7 @@ export default function Cards() {
                 component="h1"
                 fontFamily="Nunito"
               >
-                Engage actively in a range of volunteer programs and diverse
-                activities dedicated to the protection of
-                Lviv's natural environment.
+                {t("community_support_describe")}
               </Typography>
             </CardContent>
           </Card>
@@ -90,7 +90,7 @@ export default function Cards() {
                 component="h1"
                 fontFamily="Nunito"
               >
-                Environmental Conservation
+                {t("environmental_conservation")}
               </Typography>
               <Typography
                 color={deepWater}
@@ -99,8 +99,7 @@ export default function Cards() {
                 component="h1"
                 fontFamily="Nunito"
               >
-                Contribute to the preservation of Lviv's natural environment
-                through volunteer programs and activities.
+                {t("environmental_conservation_describe")}
               </Typography>
             </CardContent>
           </Card>
@@ -128,7 +127,7 @@ export default function Cards() {
                 component="h1"
                 fontFamily="Nunito"
               >
-                Aducation Assistance
+                {t("aducation_assistance")}
               </Typography>
               <Typography
                 color={deepWater}
@@ -137,8 +136,7 @@ export default function Cards() {
                 component="h1"
                 fontFamily="Nunito"
               >
-                Help improve educational opportunities for children and adults
-                in Lviv through tutoring and mentoring program.
+                {t("aducation_assistance_describe")}
               </Typography>
             </CardContent>
           </Card>

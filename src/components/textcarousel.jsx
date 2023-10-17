@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import "./TextCarousel.css"; // Import your CSS file with styles
+import { useTranslation } from "react-i18next";
 
 const message1 = `
 Smart Volunteers is an amazing organization with a team of dedicated and passionate individuals who truly care about making a positive impact in the community. Their efforts have made a real difference in Lviv and I am grateful for their hard work and commitment to helping others.<br /><br />
@@ -20,6 +21,7 @@ Smart Volunteers is an example of what can be achieved when a group of people wi
 `;
 
 const TextCarousel = () => {
+  const { t } = useTranslation  ()
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const messages = [message1, message2, message3];
