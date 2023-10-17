@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { ReactComponent as Logo } from "./SM.svg";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
 import { deepWater, sea, wave } from "./constants";
+import { useTranslation } from "react-i18next";
 
 export default function FooterBox() {
   const {
@@ -19,6 +20,8 @@ export default function FooterBox() {
   } = useForm();
   const onSubmit = (data) => console.log(data);
   console.log(errors);
+
+  const { t } = useTranslation  ()
 
   return (
     <Box
@@ -97,7 +100,7 @@ export default function FooterBox() {
                   borderRadius: "1rem",
                 }}
               >
-                Send
+                {t("send")}
               </Button>
             </Grid>
           </form>
@@ -112,7 +115,7 @@ export default function FooterBox() {
               color: [deepWater],
             }}
           >
-            Contact Us Now
+            {t("contact_us")}
             <Typography
               sx={{
                 fontSize: "18px",
@@ -121,9 +124,8 @@ export default function FooterBox() {
                 color: [sea],
               }}
             >
-              Fill out the from below to get in touch with us. We are here to
-              answer any
-              <br /> questions you may have and provide the support you need.
+              {t("contact_us_message_1")}
+              <br /> {t("contact_us_message_2")}
             </Typography>
           </Typography>
         </Grid>
@@ -171,7 +173,7 @@ export default function FooterBox() {
       </Grid>
 
       <Typography variant="body2" align="center" gutterBottom color={deepWater}>
-        &copy; {new Date().getFullYear()} Smart Volunteers. All rights reserved.
+        &copy; {new Date().getFullYear()} Smart Volunteers. {t("copyright")}
       </Typography>
     </Box>
   );

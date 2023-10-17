@@ -1,43 +1,48 @@
 import { Box, Typography } from "@mui/material";
 import { deepWater } from "./constants";
+import { useTranslation } from "react-i18next";
 
 export default function AboutUs() {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
-        paddingLeft: "10%",
+        paddingLeft: { xs: "4%", md: "10%", lg:"10%" },
+        paddingRight: { xs: "4%", md: "10%", lg:"10%" },
         paddingTop: "4%",
       }}
     >
       <Typography
-        sx={{ fontSize: "40px", fontFamily: "Nunito", color: [deepWater] }}
+        sx={{
+          fontSize: { xs: "35px", lg: "40px" },
+          fontFamily: "Nunito",
+          color: [deepWater],
+        }}
       >
-        About us
+        {t("about_us")}
       </Typography>
       <Typography
         sx={{
-          fontSize: "18px",
+          fontSize: { xs: "18px", md: "15px", lg: "22px" },
           fontFamily: "Nunito",
           paddingTop: "1%",
           color: [deepWater],
         }}
       >
-        Welcome to Smart Volunteers!
+        {t("welcome")}
       </Typography>
       <Typography
         sx={{
-          fontSize: "18px",
+          fontSize: { xs: "18px", md: "15px", lg: "22px" },
           fontFamily: "Nunito",
           paddingTop: "1%",
           color: [deepWater],
         }}
       >
-        We are dedicated volunteer organization located in Lviv, "ADRESS". Our
-        mission is to connect passionate individuals with
-        <br />
-        meaningful volunteer opportunities. With a strong commitment to making a
-        positive impact in our community, we strive
-        <br /> to create a better world through volunteerism.
+        {t("welcome_text_1")}
+        {/* Fix It */}
+        {t("welcome_text_2")}
+        {t("welcome_text_3")}
       </Typography>
     </Box>
   );
