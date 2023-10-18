@@ -64,7 +64,7 @@ const TextCarousel = () => {
     <Grid container justifyContent="center" alignItems="center">
       <Grid
         item
-        xs={12}
+        xs={10}
         sm={8}
         md={6}
         container
@@ -81,12 +81,12 @@ const TextCarousel = () => {
             }}
           ></Button>
         </Grid>
-        <Grid xs={10} sx={{height:"300px" }}>
-          <Box elevation={3} style={{ padding: "20px", borderRadius: "15px", }}>
+        <Grid xs={8} sx={{ height: "300px" }}>
+          <Box>
             <Typography
               sx={{
-                fontSize: { xs: "17px", lg: "24px" },
-                wordBreak:"break-word"
+                fontSize: { xs: "15px", lg: "24px" },
+                wordBreak: "break-word",
               }}
               style={{
                 fontFamily: "Nunito",

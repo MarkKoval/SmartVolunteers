@@ -37,6 +37,7 @@ export default function Cards() {
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              boxShadow:3
             }}
           >
             <CardMedia
@@ -56,7 +57,7 @@ export default function Cards() {
               <Typography
                 gutterBottom
                 sx={{
-                  fontSize: { xs: "32px", lg: "34px" },
+                  fontSize: { xs: "34px", lg: "34px" },
                   fontWeight: { xs: "500" },
                 }}
                 fontFamily="Nunito"
@@ -84,6 +85,7 @@ export default function Cards() {
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              boxShadow:3
             }}
           >
             <CardMedia
@@ -103,7 +105,7 @@ export default function Cards() {
               <Typography
                 gutterBottom
                 sx={{
-                  fontSize: { xs: "30px", lg: "34px" },
+                  fontSize: { xs: "34px", lg: "33px" },
                   fontWeight: { xs: "500" },
                 }}
                 fontFamily="Nunito"
@@ -131,6 +133,7 @@ export default function Cards() {
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              boxShadow:3
             }}
           >
             <CardMedia
@@ -149,7 +152,7 @@ export default function Cards() {
             >
               <Typography
                 sx={{
-                  fontSize: { xs: "32px", lg: "34px" },
+                  fontSize: { xs: "34px", lg: "34px" },
                   fontWeight: { xs: "500" },
                 }}
                 gutterBottom

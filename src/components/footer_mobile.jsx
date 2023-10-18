@@ -12,7 +12,7 @@ import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
 import { deepWater, sea, wave } from "./constants";
 import { useTranslation } from "react-i18next";
 
-export default function FooterBox() {
+export default function FooterMobile() {
   const {
     register,
     handleSubmit,
@@ -25,7 +25,7 @@ export default function FooterBox() {
 
   return (
     <Box
-      sx={{ bgcolor: [wave], paddingTop: 12, paddingBottom: 6 }}
+      sx={{display:{xs:"block", md:"block", lg:"none", xl:"none"}, bgcolor: [wave], paddingTop: 12, paddingBottom: 6 }}
       component="footer"
     >
       <Grid container spacing={3}>

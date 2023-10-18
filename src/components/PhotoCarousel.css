@@ -1,0 +1,31 @@
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s;
+}
+
+.photo {
+  flex: 0 0 33.33%;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.previous {
+  transform: translateX(-33.33%) rotateY(60deg);
+  opacity: 0;
+}
+
+.current {
+  transform: translateX(0) rotateY(0deg);
+  opacity: 1;
+}
+
+.next {
+  transform: translateX(33.33%) rotateY(-60deg);
+  opacity: 0;
+}
