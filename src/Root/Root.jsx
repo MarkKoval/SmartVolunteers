@@ -14,7 +14,6 @@ import TextCarousel from "../components/textcarousel";
 import { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/system";
 import FooterMobile from "../components/footer_mobile";
-import { Photo } from "@mui/icons-material";
 import PhotoCarousel from "../components/photocarousel";
 
 const theme = createTheme({
