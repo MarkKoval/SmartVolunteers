@@ -4,7 +4,7 @@ import { images } from "./constants";
 export default function RecentWorks() {
   return (
     <Container
-      sx={{
+      sx={{display:{xs:"none",md:"none", lg:"block", xl:"block"},
         py: 6,
       }}
       maxWidth="auto"
