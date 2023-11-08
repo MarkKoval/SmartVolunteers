@@ -14,7 +14,7 @@ export default function PhotoCarousel() {
   };
 
   return (
-    <Box sx={{display:{xs:"block",md:"block", lg:"none", xl:"none"}}}>
+    <Box sx={{display:{xs:"block",md:"none", lg:"none", xl:"none"}}}>
       <Carousel  cellAlign="center" cellSpacing={130} {...params} style={{}}>
         {images.map((image) => (
           <Box

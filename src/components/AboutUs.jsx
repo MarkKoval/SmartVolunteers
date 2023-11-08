@@ -10,11 +10,13 @@ export default function AboutUs() {
         paddingLeft: { xs: "4%", md: "10%", lg:"10%" },
         paddingRight: { xs: "4%", md: "10%", lg:"10%" },
         paddingTop: "4%",
+        paddingBottom : "8%",
       }}
     >
       <Typography
         sx={{
           fontSize: { xs: "35px", lg: "40px" },
+          textAlign:{xs: "center", md:"center", lg:"left"},
           fontFamily: "Nunito",
           color: [deepWater],
         }}
@@ -23,6 +25,7 @@ export default function AboutUs() {
       </Typography>
       <Typography
         sx={{
+          textAlign:{xs: "center", md:"center", lg:"left"},
           fontSize: { xs: "18px", md: "15px", lg: "22px" },
           fontFamily: "Nunito",
           paddingTop: "1%",
@@ -33,6 +36,7 @@ export default function AboutUs() {
       </Typography>
       <Typography
         sx={{
+          textAlign:{xs: "center", md:"center", lg:"left"}, 
           fontSize: { xs: "18px", md: "15px", lg: "22px" },
           fontFamily: "Nunito",
           paddingTop: "1%",

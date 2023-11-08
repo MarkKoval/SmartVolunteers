@@ -25,7 +25,7 @@ export default function FooterPC() {
 
   return (
     <Box 
-      sx={{ display:{xs:"none", md:"none", lg:"block", xl:"block"},bgcolor: [wave], paddingTop: 12, paddingBottom: 6 }}
+      sx={{ display:{xs:"none",sm: "none", md:"none", lg:"block", xl:"block"},bgcolor: [wave], paddingTop: 12, paddingBottom: 6 }}
       component="footer"
     >
       <Grid container spacing={3}>

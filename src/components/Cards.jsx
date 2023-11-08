@@ -37,7 +37,8 @@ export default function Cards() {
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              boxShadow:3
+              boxShadow:15,
+              borderRadius:"2%"
             }}
           >
             <CardMedia
@@ -85,7 +86,8 @@ export default function Cards() {
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              boxShadow:3
+              boxShadow:15,
+              borderRadius:"2%"
             }}
           >
             <CardMedia
@@ -130,10 +132,11 @@ export default function Cards() {
         <Grid item xs={10} sm={6} md={3.3}>
           <Card
             sx={{
-              height: "100%",
+              
               display: "flex",
               flexDirection: "column",
-              boxShadow:3
+              boxShadow:15,
+              borderRadius:"2%"
             }}
           >
             <CardMedia
