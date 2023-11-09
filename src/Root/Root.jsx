@@ -15,7 +15,6 @@ import { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/system";
 import FooterMobile from "../components/footer_mobile";
 import PhotoCarousel from "../components/photocarousel";
-import Test from "../test";
 
 const theme = createTheme({
   breakpoints: {

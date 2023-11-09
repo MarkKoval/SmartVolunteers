@@ -82,110 +82,110 @@ export default function TopText() {
         <br />
         {t("toptext_describe_2")}
       </Typography>
-      
-        <Box
+
+      <Box
+        sx={{
+          textAlign: { xs: "center", lg: "left" },
+        }}
+      >
+        <Button
+          onClick={handleClickOpen}
+          variant="contained"
           sx={{
-            textAlign: { xs: "center", lg: "left" },
+            background: [sea],
+            marginTop: "20px",
+            marginLeft: { lg: "10%" },
+            fontSize: { xs: "20px", lg: "25px" },
+            fontFamily: "Nunito",
+            color: "black",
+            borderRadius: "1rem",
+          }}
+          type="submit"
+        >
+          {t("join_button")}
+        </Button>
+
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          sx={{
+            backdropFilter: "blur(5px) sepia(5%)",
+            "& .MuiDialog-paper": {
+              borderRadius: "20px",
+            },
           }}
         >
-          <Button
-            onClick={handleClickOpen}
-            variant="contained"
-            sx={{
-              background: [sea],
-              marginTop: "20px",
-              marginLeft: { lg: "10%" },
-              fontSize: { xs: "20px", lg: "25px" },
-              fontFamily: "Nunito",
-              color: "black",
-              borderRadius: "1rem",
-            }}
-            type="submit"
-          >
-            {t("join_button")}
-          </Button>
-
-          <Dialog
-            open={open}
-            onClose={handleClose}
-            sx={{
-              backdropFilter: "blur(5px) sepia(5%)",
-              "& .MuiDialog-paper": {
-                borderRadius: "20px",
-              },
-            }}
-          >
-            <form onSubmit={(e) => Submit(e)}>
+          <form onSubmit={(e) => Submit(e)}>
             <DialogTitle>{t("join_button")}</DialogTitle>
             <DialogContent>
-                <TextField
-                  required
-                  variant="outlined"
-                  type="text"
-                  name="Name"
-                  placeholder="First Name"
-                />
-                <TextField
-                  required
-                  variant="outlined"
-                  type="text"
-                  name="LastName"
-                  placeholder="Last Name"
-                />
-                <TextField
-                  required
-                  variant="outlined"
-                  type="email"
-                  name="Email"
-                  placeholder="E-mail"
-                />
-                <TextField
-                  required
-                  variant="outlined"
-                  type="date"
-                  name="BDay"
-                  placeholder="B-Day"
-                />
-                <TextField
-                  required
-                  variant="outlined"
-                  type="text"
-                  name="Telegram"
-                  placeholder="Telegram"
-                />
-                <TextField
-                  required
-                  variant="outlined"
-                  type="text"
-                  name="Instagram"
-                  placeholder="Instagram"
-                />
-                <TextField
-                  required
-                  variant="outlined"
-                  type="text"
-                  name="Question1"
-                  placeholder="Question 1"
-                />
-                <TextField
-                  required
-                  variant="outlined"
-                  type="text"
-                  name="Question2"
-                  placeholder="Question 2"
-                />
-              
+              <TextField
+                required
+                variant="outlined"
+                type="text"
+                name="Name"
+                placeholder="First Name"
+              />
+              <TextField
+                required
+                variant="outlined"
+                type="text"
+                name="LastName"
+                placeholder="Last Name"
+              />
+              <TextField
+                required
+                variant="outlined"
+                type="email"
+                name="Email"
+                placeholder="E-mail"
+              />
+              <TextField
+                required
+                variant="outlined"
+                type="date"
+                name="BDay"
+                placeholder="B-Day"
+              />
+              <TextField
+                required
+                variant="outlined"
+                type="text"
+                name="Telegram"
+                placeholder="Telegram"
+              />
+              <TextField
+                required
+                variant="outlined"
+                type="text"
+                name="Instagram"
+                placeholder="Instagram"
+              />
+              <TextField
+                required
+                variant="outlined"
+                type="text"
+                name="Question1"
+                placeholder="Question 1"
+              />
+              <TextField
+                required
+                variant="outlined"
+                type="text"
+                name="Question2"
+                placeholder="Question 2"
+              />
             </DialogContent>
             <DialogActions>
               <Button onClick={handleClose}>Cancel</Button>
-              <Button name="Name" type="submit">
+              <Button name="Name" type="submit" onClick={() => {
+            alert("Registered");
+          }}>
                 {t("join_button")}
               </Button>
             </DialogActions>
-            </form>
-          </Dialog>
-        </Box>
-      
+          </form>
+        </Dialog>
+      </Box>
     </Box>
   );
 }

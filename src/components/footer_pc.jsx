@@ -6,19 +6,17 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useForm } from "react-hook-form";
 import { ReactComponent as Logo } from "./SM.svg";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
 import { deepWater, sea, wave } from "./constants";
 import { useTranslation } from "react-i18next";
 
 export default function FooterPC() {
-
   function Submit(e) {
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
     fetch(
-      "https://script.google.com/macros/s/AKfycbwkX6F8btr4K832PF2EmKmL-XO6FgjYHbZw0qV8jkqw3KQUPxWdKB-AKLH1ELn_lsQ/exec",
+      "https://script.google.com/macros/s/AKfycbypP2OXZYmq7vzhtQ31iPV3vpXjZGt7uwG_cOCYJBEkGMyEM1VPzuhGicibAaUpNGM/exec",
       {
         method: "POST",
         body: formDatab,
@@ -33,19 +31,29 @@ export default function FooterPC() {
       });
   }
 
-
-  const { t } = useTranslation  ()
+  const { t } = useTranslation();
 
   return (
-    <Box 
-      sx={{ display:{xs:"none",sm: "none", md:"none", lg:"block", xl:"block"},bgcolor: [wave], paddingTop: 12, paddingBottom: 6 }}
+    <Box
+      sx={{
+        display: {
+          xs: "none",
+          sm: "none",
+          md: "none",
+          lg: "block",
+          xl: "block",
+        },
+        bgcolor: [wave],
+        paddingTop: 12,
+        paddingBottom: 6,
+      }}
       component="footer"
     >
       <Grid container spacing={3}>
         {/* First Column */}
         <Grid item xs={1}></Grid>
         <Grid item xs={4}>
-        <form onSubmit={(e) => Submit(e)}>
+          <form onSubmit={(e) => Submit(e)}>
             {/* First Row in First Column */}
             <Grid container spacing={4}>
               <Grid item xs={6}>
@@ -103,11 +111,11 @@ export default function FooterPC() {
             {/* Third Row in First Column */}
             <Grid item xs={12} textAlign="center" marginTop="1rem">
               <Button
-              
+                
                 variant="contained"
                 type="submit"
                 style={{
-                  width:"6rem",
+                  width: "6rem",
                   background: [sea],
                   color: "black",
                   borderRadius: "1rem",
