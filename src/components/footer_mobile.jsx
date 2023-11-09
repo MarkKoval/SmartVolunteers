@@ -6,7 +6,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useForm } from "react-hook-form";
 import { ReactComponent as Logo } from "./SM.svg";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
 import { deepWater, sea, wave } from "./constants";
