@@ -18,7 +18,7 @@ export default function TopText() {
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
     fetch(
-      "https://script.google.com/macros/s/AKfycbyyH0JPm8jeMfQXwZE9vqUA0ujCiGGHALWgcpCz0d_hDjQOV7HiPR47l_oL36zKU3I/exec",
+      "https://script.google.com/macros/s/AKfycbzAsbffUbcXXqMz0pns6zOgxks-Ziw7gQtxWJK43qHKPD2gaRussLcfKdXd9vtyQpU/exec",
       {
         method: "POST",
         body: formDatab,
@@ -82,107 +82,110 @@ export default function TopText() {
         <br />
         {t("toptext_describe_2")}
       </Typography>
-      <Box
-        sx={{
-          textAlign: { xs: "center", lg: "left" },
-        }}
-      >
-        <Button
-          onClick={handleClickOpen}
-          variant="contained"
+      
+        <Box
           sx={{
-            background: [sea],
-            marginTop: "20px",
-            marginLeft: { lg: "10%" },
-            fontSize: { xs: "20px", lg: "25px" },
-            fontFamily: "Nunito",
-            color: "black",
-            borderRadius: "1rem",
-          }}
-          type="submit"
-        >
-          {t("join_button")}
-        </Button>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          sx={{
-            backdropFilter: "blur(5px) sepia(5%)",
-            "& .MuiDialog-paper": {
-              borderRadius: "20px",
-            },
+            textAlign: { xs: "center", lg: "left" },
           }}
         >
-          <DialogTitle>{t("join_button")}</DialogTitle>
-          <DialogContent></DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-          </DialogActions>
-        </Dialog>
-      </Box>
-      <Box>
-        <form onSubmit={(e) => Submit(e)}>
-          <TextField
-            required
-            variant="outlined"
-            type="text"
-            name="Name"
-            placeholder="First Name"
-          />
-          <TextField
-            required
-            variant="outlined"
-            type="text"
-            name="LastName"
-            placeholder="Last Name"
-          />
-          <TextField
-            required
-            variant="outlined"
-            type="email"
-            name="Email"
-            placeholder="E-mail"
-          />
-          <TextField
-            required
-            variant="outlined"
-            type="date"
-            name="BDay"
-            placeholder="B-Day"
-          />
-          <TextField
-            required
-            variant="outlined"
-            type="text"
-            name="Telegram"
-            placeholder="Telegram"
-          />
-          <TextField
-            required
-            variant="outlined"
-            type="text"
-            name="Instagram"
-            placeholder="Instagram"
-          />
-          <TextField
-            required
-            variant="outlined"
-            type="text"
-            name="Question1"
-            placeholder="Question 1"
-          />
-          <TextField
-            required
-            variant="outlined"
-            type="text"
-            name="Question2"
-            placeholder="Question 2"
-          />
-          <Button name="Name" type="submit" path="/">
+          <Button
+            onClick={handleClickOpen}
+            variant="contained"
+            sx={{
+              background: [sea],
+              marginTop: "20px",
+              marginLeft: { lg: "10%" },
+              fontSize: { xs: "20px", lg: "25px" },
+              fontFamily: "Nunito",
+              color: "black",
+              borderRadius: "1rem",
+            }}
+            type="submit"
+          >
             {t("join_button")}
           </Button>
-        </form>
-      </Box>
+
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            sx={{
+              backdropFilter: "blur(5px) sepia(5%)",
+              "& .MuiDialog-paper": {
+                borderRadius: "20px",
+              },
+            }}
+          >
+            <form onSubmit={(e) => Submit(e)}>
+            <DialogTitle>{t("join_button")}</DialogTitle>
+            <DialogContent>
+                <TextField
+                  required
+                  variant="outlined"
+                  type="text"
+                  name="Name"
+                  placeholder="First Name"
+                />
+                <TextField
+                  required
+                  variant="outlined"
+                  type="text"
+                  name="LastName"
+                  placeholder="Last Name"
+                />
+                <TextField
+                  required
+                  variant="outlined"
+                  type="email"
+                  name="Email"
+                  placeholder="E-mail"
+                />
+                <TextField
+                  required
+                  variant="outlined"
+                  type="date"
+                  name="BDay"
+                  placeholder="B-Day"
+                />
+                <TextField
+                  required
+                  variant="outlined"
+                  type="text"
+                  name="Telegram"
+                  placeholder="Telegram"
+                />
+                <TextField
+                  required
+                  variant="outlined"
+                  type="text"
+                  name="Instagram"
+                  placeholder="Instagram"
+                />
+                <TextField
+                  required
+                  variant="outlined"
+                  type="text"
+                  name="Question1"
+                  placeholder="Question 1"
+                />
+                <TextField
+                  required
+                  variant="outlined"
+                  type="text"
+                  name="Question2"
+                  placeholder="Question 2"
+                />
+              
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose}>Cancel</Button>
+              <Button name="Name" type="submit">
+                {t("join_button")}
+              </Button>
+            </DialogActions>
+            </form>
+          </Dialog>
+        </Box>
+      
     </Box>
   );
 }

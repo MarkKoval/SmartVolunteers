@@ -13,13 +13,26 @@ import { deepWater, sea, wave } from "./constants";
 import { useTranslation } from "react-i18next";
 
 export default function FooterPC() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  function Submit(e) {
+    const formEle = document.querySelector("form");
+    const formDatab = new FormData(formEle);
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwkX6F8btr4K832PF2EmKmL-XO6FgjYHbZw0qV8jkqw3KQUPxWdKB-AKLH1ELn_lsQ/exec",
+      {
+        method: "POST",
+        body: formDatab,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
 
   const { t } = useTranslation  ()
 
@@ -32,7 +45,7 @@ export default function FooterPC() {
         {/* First Column */}
         <Grid item xs={1}></Grid>
         <Grid item xs={4}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={(e) => Submit(e)}>
             {/* First Row in First Column */}
             <Grid container spacing={4}>
               <Grid item xs={6}>
@@ -48,7 +61,7 @@ export default function FooterPC() {
                   label="Name"
                   id="outlined-basic"
                   type="text"
-                  {...register("Name", {})}
+                  name="Name"
                 />
               </Grid>
               <Grid item xs={6}>
@@ -60,11 +73,11 @@ export default function FooterPC() {
                   }}
                   margin="normal"
                   fullWidth
-                  label="E-mail"
+                  label="Email"
                   id="outlined-basic"
                   variant="outlined"
                   type="email"
-                  {...register("E-mail", {})}
+                  name="Email"
                 />
               </Grid>
             </Grid>
@@ -84,7 +97,7 @@ export default function FooterPC() {
                 id="outlined-basic"
                 variant="outlined"
                 type="text"
-                {...register("Message", {})}
+                name="Message"
               />
             </Grid>
             {/* Third Row in First Column */}
