@@ -13,13 +13,24 @@ import { deepWater, sea, wave } from "./constants";
 import { useTranslation } from "react-i18next";
 
 export default function FooterMobile() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+  function Submit(e) {
+    const formEle = document.querySelector("form");
+    const formDatab = new FormData(formEle);
+    fetch(
+      "https://script.google.com/macros/s/AKfycbypP2OXZYmq7vzhtQ31iPV3vpXjZGt7uwG_cOCYJBEkGMyEM1VPzuhGicibAaUpNGM/exec",
+      {
+        method: "POST",
+        body: formDatab,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   const { t } = useTranslation();
 
@@ -42,29 +53,28 @@ export default function FooterMobile() {
       }}
       component="footer"
     >
+      <Typography
+        sx={{
+          fontSize: "40px",
+          fontFamily: "Nunito",
+          color: [deepWater],
+        }}
+      >
+        {t("contact_us")}
         <Typography
           sx={{
-            fontSize: "40px",
+            fontSize: "16px",
             fontFamily: "Nunito",
-            color: [deepWater],
-
+            paddingTop: "1%",
+            color: [sea],
           }}
         >
-          {t("contact_us")}
-          <Typography
-            sx={{
-              fontSize: "16px",
-              fontFamily: "Nunito",
-              paddingTop: "1%",
-              color: [sea],
-            }}
-          >
-            {t("contact_us_message_1")}
-            <br /> {t("contact_us_message_2")}
-          </Typography>
+          {t("contact_us_message_1")}
+          <br /> {t("contact_us_message_2")}
         </Typography>
+      </Typography>
       <Grid sx={{ paddingTop: 2 }}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={(e) => Submit(e)}>
           <Grid container spacing={4}>
             <Grid item xs={6}>
               <TextField
@@ -79,7 +89,7 @@ export default function FooterMobile() {
                 label="Name"
                 id="outlined-basic"
                 type="text"
-                {...register("Name", {})}
+                name="Name"
               />
             </Grid>
             <Grid item xs={6}>
@@ -95,7 +105,7 @@ export default function FooterMobile() {
                 id="outlined-basic"
                 variant="outlined"
                 type="email"
-                {...register("E-mail", {})}
+                name="Email"
               />
             </Grid>
           </Grid>
@@ -115,14 +125,14 @@ export default function FooterMobile() {
               id="outlined-basic"
               variant="outlined"
               type="text"
-              {...register("Message", {})}
+              name="Message"
             />
           </Grid>
           {/* Third Row in First Column */}
           <Grid item xs={12} textAlign="center" marginTop="1rem">
             <Button
-              variant="contained"
               type="submit"
+              variant="contained"
               style={{
                 width: "6rem",
                 background: [sea],
@@ -176,7 +186,13 @@ export default function FooterMobile() {
         </Grid>
       </Grid>
 
-      <Typography variant="body2" align="center" gutterBottom color={deepWater} sx={{paddingTop: 2}}>
+      <Typography
+        variant="body2"
+        align="center"
+        gutterBottom
+        color={deepWater}
+        sx={{ paddingTop: 2 }}
+      >
         &copy; {new Date().getFullYear()} Smart Volunteers. {t("copyright")}
       </Typography>
     </Box>
