@@ -4,7 +4,6 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   TextField,
   Typography,
@@ -13,9 +12,26 @@ import { sea } from "../components/constants";
 import backgroundImage from "./background.jpg";
 import { useTranslation } from "react-i18next";
 import React from "react";
-import { useForm } from "react-hook-form";
 
 export default function TopText() {
+  function Submit(e) {
+    const formEle = document.querySelector("form");
+    const formDatab = new FormData(formEle);
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyyH0JPm8jeMfQXwZE9vqUA0ujCiGGHALWgcpCz0d_hDjQOV7HiPR47l_oL36zKU3I/exec",
+      {
+        method: "POST",
+        body: formDatab,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -28,13 +44,6 @@ export default function TopText() {
 
   const { t } = useTranslation();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
   return (
     <Box
       sx={{
@@ -94,99 +103,86 @@ export default function TopText() {
         >
           {t("join_button")}
         </Button>
-      </Box>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        sx={{
-          backdropFilter: "blur(5px) sepia(5%)",
-          "& .MuiDialog-paper": {
-            borderRadius: "20px",
-          },
-        }}
-      >
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          sx={{
+            backdropFilter: "blur(5px) sepia(5%)",
+            "& .MuiDialog-paper": {
+              borderRadius: "20px",
+            },
+          }}
+        >
           <DialogTitle>{t("join_button")}</DialogTitle>
-          <DialogContent>
-            <TextField
-              variant="outlined"
-              type="text"
-              placeholder="First Name"
-              {...register("FirstName", {})}
-            />
-            <TextField
-              variant="outlined"
-              type="text"
-              placeholder="Last Name"
-              {...register("LastName", {})}
-            />
-            <TextField
-            variant="outlined"
-              type="email"
-              placeholder="E-mail"
-              {...register("E-mail", {})}
-            />
-            <TextField variant="outlined" type="datetime" placeholder="B-Day" {...register} />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Telegram"
-              {...register("Telegram", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Instagram"
-              {...register("Instagram", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Question 1"
-              {...register("Question 1", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Question 2"
-              {...register("Question 2", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Question 3"
-              {...register("Question 3", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Question 4"
-              {...register("Question 4", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Question 5"
-              {...register("Question 5", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Question 6"
-              {...register("Question 6", {})}
-            />
-            <TextField variant="outlined"
-              type="text"
-              placeholder="Question 7"
-              {...register("Question 7", {})}
-            />
-            <TextField variant="outlined"
-            id="outlined-basic"
-              type="text"
-              placeholder="Question 8"
-              {...register("Question 8", {})}
-            />
-          </DialogContent>
+          <DialogContent></DialogContent>
           <DialogActions>
             <Button onClick={handleClose}>Cancel</Button>
-            <Button onClick={handleClose} type="submit">
-              Subscribe
-            </Button>
           </DialogActions>
+        </Dialog>
+      </Box>
+      <Box>
+        <form onSubmit={(e) => Submit(e)}>
+          <TextField
+            required
+            variant="outlined"
+            type="text"
+            name="Name"
+            placeholder="First Name"
+          />
+          <TextField
+            required
+            variant="outlined"
+            type="text"
+            name="LastName"
+            placeholder="Last Name"
+          />
+          <TextField
+            required
+            variant="outlined"
+            type="email"
+            name="Email"
+            placeholder="E-mail"
+          />
+          <TextField
+            required
+            variant="outlined"
+            type="date"
+            name="BDay"
+            placeholder="B-Day"
+          />
+          <TextField
+            required
+            variant="outlined"
+            type="text"
+            name="Telegram"
+            placeholder="Telegram"
+          />
+          <TextField
+            required
+            variant="outlined"
+            type="text"
+            name="Instagram"
+            placeholder="Instagram"
+          />
+          <TextField
+            required
+            variant="outlined"
+            type="text"
+            name="Question1"
+            placeholder="Question 1"
+          />
+          <TextField
+            required
+            variant="outlined"
+            type="text"
+            name="Question2"
+            placeholder="Question 2"
+          />
+          <Button name="Name" type="submit" path="/">
+            {t("join_button")}
+          </Button>
         </form>
-      </Dialog>
+      </Box>
     </Box>
   );
 }
