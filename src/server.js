@@ -3,9 +3,12 @@ const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
