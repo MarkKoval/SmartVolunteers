@@ -38,10 +38,10 @@ export default function TopText() {
       setSuccessOpen(true);
       setTimeout(() => setSuccessOpen(false), 5000);
       const response = await fetch(
-        "http://localhost:443/submit-to-google-sheets",
+        "http://localhost:5000/submit-to-google-sheets",
         {
           method: "POST",
-          mode: 'no-cors',
+          
           headers: {
             "Content-Type": "application/json",
           },
