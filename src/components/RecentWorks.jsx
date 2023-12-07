@@ -5,7 +5,7 @@ export default function RecentWorks() {
   return (
     <Container
       sx={{
-        display: { xs: "none", md: "block", lg: "block", xl: "block" },
+        display: { xs: "none",sm:"block", md: "block", lg: "block", xl: "block" },
         py: 6,
       }}
       maxWidth="auto"

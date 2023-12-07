@@ -5,7 +5,6 @@ import { Box } from "@mui/material";
 import TopText from "../components/TopText";
 import Introducing from "../components/Introducing";
 import Cards from "../components/Cards";
-import FooterPC from "../components/footer_pc";
 import MapPC from "../components/map_pc";
 import AboutUs from "../components/AboutUs";
 import RecentWorksText from "../components/RecentWorksText";
@@ -13,8 +12,8 @@ import RecentWorks from "../components/RecentWorks";
 import TextCarousel from "../components/textcarousel";
 import { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/system";
-import FooterMobile from "../components/footer_mobile";
 import PhotoCarousel from "../components/photocarousel";
+import Footer from "../components/footer";
 
 const theme = createTheme({
   breakpoints: {
@@ -52,8 +51,7 @@ export default function App() {
         </Box>
         <AboutUs />
         <MapPC />
-        <FooterPC />
-        <FooterMobile />
+        <Footer />
       </Box>
     </ThemeProvider>
   );
