@@ -3,7 +3,6 @@ import {
   AlertTitle,
   Box,
   Button,
-  Checkbox,
   Dialog,
   DialogActions,
   DialogTitle,
