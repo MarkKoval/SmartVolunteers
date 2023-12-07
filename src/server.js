@@ -16,7 +16,7 @@ app.get('*', (req, res) => {
 
 // Load client secrets from a local file.
 const auth = new google.auth.GoogleAuth({
-  keyFile: "./credentials.json", // Replace with the path to your service account key file
+  keyFile: "./src/credentials.json", // Replace with the path to your service account key file
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
