@@ -2,7 +2,6 @@ const express = require("express");
 const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const path = require('path');
 
 const app = express();
@@ -30,7 +29,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.use(cors({ origin: "http://localhost:3000" }));
 app.post("/submit-to-google-sheets", async (req, res) => {
   try {
     const { name, surname, email, birthday, phoneNumber, telegram, education, experience, skills, motivation, additionalInformation, section, validation } =
@@ -60,7 +58,6 @@ app.post("/submit-to-google-sheets", async (req, res) => {
 });
 
 // Route for sending data to email
-app.use(cors({ origin: "http://localhost:3000" }));
 app.post("/submit-to-email", async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -84,5 +81,5 @@ app.post("/submit-to-email", async (req, res) => {
   }
 });
 
-const port = 5000;
+const port = 443;
 app.listen(port, () => console.log(`Server running on port ${port}`));
