@@ -10,6 +10,7 @@ import {
   Grid,
   List,
   ListItem,
+  Radio,
   Snackbar,
   TextField,
   Typography,
@@ -354,8 +355,15 @@ export default function TopText() {
               </Grid>
 
               <Grid
-              sx={{display:{xs:"none", sm:"none", md:"flex", lg:"flex", xl:"flex" }}}
-            
+                sx={{
+                  display: {
+                    xs: "none",
+                    sm: "none",
+                    md: "flex",
+                    lg: "flex",
+                    xl: "flex",
+                  },
+                }}
                 container
                 spacing={2}
                 columns={[3, 12]}
@@ -363,29 +371,33 @@ export default function TopText() {
                 paddingTop="30px"
                 alignItems="center"
               >
-                <Grid
-                  item xs={1}
-                >
-                  <Checkbox 
+                <Grid item xs={1}>
+                  {/* <Checkbox
                     size="medium"
                     {...register("validation", { required: true })}
-                  />
+                  /> */}
+                  <Radio {...register("validation", { required: true })} size="medium"/>
                 </Grid>
                 <Grid item xs={11}>
                   <Typography
                     fontFamily="nunito"
                     fontSize="16px"
                     fontWeight="300"
-
-
                   >
                     {t("Rules")}
                   </Typography>
                 </Grid>
               </Grid>
               <Grid
-              sx={{display:{xs:"block", sm:"block", md:"none", lg:"none", xl:"none" }}}
-            
+                sx={{
+                  display: {
+                    xs: "block",
+                    sm: "block",
+                    md: "none",
+                    lg: "none",
+                    xl: "none",
+                  },
+                }}
                 container
                 spacing={2}
                 columns={[3, 12]}
@@ -393,14 +405,12 @@ export default function TopText() {
                 paddingTop="30px"
                 alignItems="center"
               >
-                <Grid
-                  item xs={12}
-                  textAlign="center"
-                >
-                  <Checkbox 
+                <Grid item xs={12} textAlign="center">
+                  {/* <Checkbox
                     size="medium"
                     {...register("validation", { required: true })}
-                  />
+                  /> */}
+                  <Radio {...register("validation", { required: true })} size="medium"/>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography
@@ -408,8 +418,6 @@ export default function TopText() {
                     fontSize="16px"
                     fontWeight="300"
                     textAlign="center"
-
-
                   >
                     {t("Rules")}
                   </Typography>

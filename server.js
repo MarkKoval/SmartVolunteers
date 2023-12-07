@@ -3,13 +3,22 @@ const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Handles any requests that don't match the ones above
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/build/index.html'));
+});
+
 // Load client secrets from a local file.
 const auth = new google.auth.GoogleAuth({
-  keyFile: "./src/credentials.json", // Replace with the path to your service account key file
+  keyFile: "./credentials.json", // Replace with the path to your service account key file
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
@@ -23,6 +32,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+app.use(cors({ origin: "http://localhost:3000" }));
 app.post("/submit-to-google-sheets", async (req, res) => {
   try {
     const { name, surname, email, birthday, phoneNumber, telegram, education, experience, skills, motivation, additionalInformation, section, validation } =
