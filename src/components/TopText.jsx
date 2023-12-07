@@ -41,6 +41,7 @@ export default function TopText() {
         "http://localhost:443/submit-to-google-sheets",
         {
           method: "POST",
+          mode: 'no-cors',
           headers: {
             "Content-Type": "application/json",
           },

@@ -36,6 +36,7 @@ export default function Footer() {
       setTimeout(() => setSuccessOpen(false), 5000);
       const response = await fetch("http://localhost:443/submit-to-email", {
         method: "POST",
+        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },
