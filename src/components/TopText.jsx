@@ -19,7 +19,6 @@ import backgroundImage from "./background.jpg";
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 /* eslint-disable */
 

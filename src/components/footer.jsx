@@ -17,6 +17,8 @@ import FormComponent from "../form";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+/* eslint-disable */
+
 export default function Footer() {
   const {
     register,
