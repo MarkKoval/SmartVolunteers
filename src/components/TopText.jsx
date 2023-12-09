@@ -38,7 +38,7 @@ export default function TopText() {
     try {
       setSuccessOpen(true);
       setTimeout(() => setSuccessOpen(false), 5000);
-      const response = await axios.post("https://3.75.158.163:5000/submit-to-google-sheets", data, {
+      const response = await axios.post("/submit-to-google-sheets", data, {
         headers: {
           "Content-Type": "application/json",
         },

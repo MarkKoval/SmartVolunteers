@@ -89,5 +89,5 @@ app.post("/submit-to-email", async (req, res) => {
   }
 });
 
-const port = 5000;
+const port = 443;
 app.listen(port, () => console.log(`Server running on port ${port}`));

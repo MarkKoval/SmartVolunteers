@@ -27,7 +27,7 @@ function DataCollectionForm() {
   const onSubmitToEmail = async (data) => {
     try {
       const after = JSON.stringify(data);
-      const response = await axios.post("https://3.75.158.163:5000/submit-to-email", data, {
+      const response = await axios.post("/submit-to-email", data, {
         headers: {
           "Content-Type": "application/json",
         },
