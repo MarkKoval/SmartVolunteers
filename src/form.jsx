@@ -4,6 +4,7 @@ import {
   Button,
   Grid,
   Snackbar,
+  TextField,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -36,11 +37,8 @@ function DataCollectionForm() {
       setSuccessOpen(true);
       setTimeout(() => setSuccessOpen(false), 5000);
 
-      
       console.log("After JSON.stringify(data):", after);
       response.status;
-
-      
     } catch (error) {
       console.log("Error - ", error); // true
     }
@@ -53,7 +51,7 @@ function DataCollectionForm() {
           {/* First Row in First Column */}
           <Grid container spacing={4}>
             <Grid item xs={6}>
-              <input
+              <TextField
                 {...register("name", { required: true })}
                 placeholder="Name"
                 InputProps={{
@@ -70,7 +68,7 @@ function DataCollectionForm() {
               />
             </Grid>
             <Grid item xs={6}>
-              <input
+              <TextField
                 {...register("email", { required: true })}
                 placeholder="Email"
                 InputProps={{
@@ -89,7 +87,7 @@ function DataCollectionForm() {
           </Grid>
           {/* Second Row in First Column */}
           <Grid item xs={12}>
-            <input
+            <TextField
               {...register("message", { required: true })}
               placeholder="Message"
               InputProps={{
@@ -123,17 +121,6 @@ function DataCollectionForm() {
             </Button>
           </Grid>
         </form>
-        <Button
-          variant="contained"
-          style={{
-            width: "6rem",
-            background: [sea],
-            color: "black",
-            borderRadius: "1rem",
-          }}
-        >
-          TESTTTTTTTTTTTTTTTTTTTT
-        </Button>
       </Grid>
       <Snackbar
         fullWidth
