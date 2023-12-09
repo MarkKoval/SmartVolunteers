@@ -22,7 +22,6 @@ import i18next from "i18next";
 import Cookies from "js-cookie";
 import { useTranslation } from "react-i18next";
 
-const pages = ["Works", "About", "Contact"];
 
 function Header() {
   const handleClickScrollWorks = () => {
