@@ -55,11 +55,13 @@ export default function TopText() {
       //   }
       // );
       console.log("Data submitted to Google Sheets:", data);
+      setOpen(false);
     } catch (error) {
       setSuccessOpen(false);
       console.error("Error:", error);
       setErrorMessage("An error occurred during form submission.");
       setErrorOpen(true);
+      
     }
   };
 
