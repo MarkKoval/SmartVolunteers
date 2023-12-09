@@ -35,7 +35,7 @@ export default function Footer() {
     try {
       setSuccessOpen(true);
       setTimeout(() => setSuccessOpen(false), 5000);
-      const response = await axios.post("http://192.168.31.224:5000/submit-to-email", data, {
+      const response = await axios.post("http://3.75.158.163:5000/submit-to-email", data, {
         headers: {
           "Content-Type": "application/json",
         },
