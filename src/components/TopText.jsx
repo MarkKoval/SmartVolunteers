@@ -429,7 +429,7 @@ export default function TopText() {
             </Grid>
 
             <DialogActions>
-              <Button type="submit" onClick={handleCloseTimed}>
+              <Button type="submit">
                 {t("Submit")}
               </Button>
               <Button onClick={handleClose}>{t("Cancel")}</Button>
