@@ -19,6 +19,7 @@ import backgroundImage from "./background.jpg";
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 /* eslint-disable */
 
@@ -55,6 +56,7 @@ export default function TopText() {
       // );
       console.log("Data submitted to Google Sheets:", data);
     } catch (error) {
+      setSuccessOpen(false);
       console.error("Error:", error);
       setErrorMessage("An error occurred during form submission.");
       setErrorOpen(true);
