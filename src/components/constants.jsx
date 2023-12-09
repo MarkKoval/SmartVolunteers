@@ -1,9 +1,9 @@
-import image1 from "../components/images/1.png";
-import image2 from "../components/images/2.png";
-import image3 from "../components/images/3.png";
-import image4 from "../components/images/7.png";
-import image5 from "../components/images/5.png";
-import image6 from "../components/images/6.png";
+import image1 from "../components/images/1.webp";
+import image2 from "../components/images/2.webp";
+import image3 from "../components/images/3.webp";
+import image4 from "../components/images/7.webp";
+import image5 from "../components/images/5.webp";
+import image6 from "../components/images/6.webp";
 
 export const images = [image1, image2, image3, image4, image5, image6];
 export const IntervalDuration = 3500;
@@ -14,10 +14,10 @@ export const deepWater = "#003b46";
 export const sea = "#c4dfe6";
 
 export const urls = [
-  "../components/images/1.png",
-  "../components/images/2.png",
-  "../components/images/3.png",
-  "../components/images/4.png",
-  "../components/images/5.png",
-  "../components/images/6.png",
+  "../components/images/1.webp",
+  "../components/images/2.webp",
+  "../components/images/3.webp",
+  "../components/images/4.webp",
+  "../components/images/5.webp",
+  "../components/images/6.webp",
 ];

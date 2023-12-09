@@ -53,7 +53,7 @@ function DataCollectionForm() {
             <Grid item xs={6}>
               <TextField
                 {...register("name", { required: true })}
-                placeholder="Name"
+                placeholder={t("Name")}
                 InputProps={{
                   style: {
                     color: [deepWater],
@@ -62,7 +62,7 @@ function DataCollectionForm() {
                 }}
                 margin="normal"
                 fullWidth
-                label="Name"
+                label={t("Name")}
                 id="outlined-basic"
                 type="text"
               />
@@ -89,7 +89,7 @@ function DataCollectionForm() {
           <Grid item xs={12}>
             <TextField
               {...register("message", { required: true })}
-              placeholder="Message"
+              placeholder={t("Message")}
               InputProps={{
                 style: {
                   borderRadius: "40px",
@@ -99,7 +99,7 @@ function DataCollectionForm() {
               height="10rem"
               multiline
               fullWidth
-              label="Message"
+              label={t("Message")}
               id="outlined-basic"
               variant="outlined"
               type="text"

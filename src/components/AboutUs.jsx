@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 export default function AboutUs() {
   const { t } = useTranslation();
   return (
-    <Box
+    <Box id="About"
       sx={{
         paddingLeft: { xs: "4%", md: "10%", lg:"10%" },
         paddingRight: { xs: "4%", md: "10%", lg:"10%" },

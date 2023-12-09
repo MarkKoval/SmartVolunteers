@@ -9,9 +9,9 @@ import {
 import { deepWater } from "./constants";
 import { useTranslation } from "react-i18next";
 
-import CardImage1 from "../components/CardImages/1.png";
-import CardImage2 from "../components/CardImages/2.png";
-import CardImage3 from "../components/CardImages/3.png";
+import CardImage1 from "../components/CardImages/1.webp";
+import CardImage2 from "../components/CardImages/2.webp";
+import CardImage3 from "../components/CardImages/3.webp";
 
 export default function Cards() {
   const { t } = useTranslation();

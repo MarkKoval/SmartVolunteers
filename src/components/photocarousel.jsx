@@ -14,12 +14,22 @@ export default function PhotoCarousel() {
   };
 
   return (
-    <Box sx={{display:{xs:"block",sm:"none",md:"none", lg:"none", xl:"none"}}}>
-      <Carousel  cellAlign="center" cellSpacing={130} {...params} style={{}}>
+    <Box id="Works1"
+      sx={{
+        display: {
+          xs: "block",
+          sm: "none",
+          md: "none",
+          lg: "none",
+          xl: "none",
+        },
+      }}
+    >
+      <Carousel cellAlign="center" cellSpacing={130} {...params} style={{}}>
         {images.map((image) => (
           <Box
             sx={{
-                borderRadius:"5%",
+              borderRadius: "5%",
               backgroundSize: "cover",
               backgroundPosition: "center",
               loading: "lazy",

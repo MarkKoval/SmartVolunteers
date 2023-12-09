@@ -15,7 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 import { sea } from "../components/constants";
-import backgroundImage from "./background.jpg";
+import backgroundImage from "./background.webp";
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -80,7 +80,7 @@ export default function TopText() {
   return (
     <Box
       sx={{
-        height: { xs: "450px", lg: "900px" },
+        height: { xs: "450px", md:"500px", lg: "900px" },
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.627), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,

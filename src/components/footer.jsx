@@ -42,7 +42,7 @@ export default function Footer() {
       });
       // const response = await fetch("http://localhost:5000/submit-to-email", {
       //   method: "POST",
-        
+
       //   headers: {
       //     "Content-Type": "application/json",
       //   },
@@ -58,7 +58,7 @@ export default function Footer() {
 
   return (
     <Box>
-      <Box
+      <Box id="Contact"
         sx={{
           display: {
             xs: "none",
@@ -72,7 +72,6 @@ export default function Footer() {
           paddingBottom: 6,
         }}
         component="footer"
-        id="desktop_footer"
       >
         <Grid container spacing={3}>
           {/* First Column */}
@@ -84,7 +83,7 @@ export default function Footer() {
                 <Grid item xs={6}>
                   <TextField
                     {...register("name", { required: true })}
-                    placeholder="Name"
+                    placeholder={t("Name")}
                     InputProps={{
                       style: {
                         color: [deepWater],
@@ -93,7 +92,7 @@ export default function Footer() {
                     }}
                     margin="normal"
                     fullWidth
-                    label="Name"
+                    label={t("Name")}
                     id="outlined-basic"
                     type="text"
                   />
@@ -120,7 +119,7 @@ export default function Footer() {
               <Grid item xs={12}>
                 <TextField
                   {...register("message", { required: true })}
-                  placeholder="Message"
+                  placeholder={t("Message")}
                   InputProps={{
                     style: {
                       borderRadius: "40px",
@@ -130,7 +129,7 @@ export default function Footer() {
                   height="10rem"
                   multiline
                   fullWidth
-                  label="Message"
+                  label={t("Message")}
                   id="outlined-basic"
                   variant="outlined"
                   type="text"
@@ -142,10 +141,11 @@ export default function Footer() {
                   variant="contained"
                   type="submit"
                   style={{
-                    width: "6rem",
+                    width: "7rem",
                     background: [sea],
                     color: "black",
                     borderRadius: "1rem",
+                    fontFamily:"Nunito"
                   }}
                 >
                   {t("send")}
@@ -237,14 +237,23 @@ export default function Footer() {
           >
             <IconButton
               sx={{ p: 0, marginLeft: "10px" }}
-              href="https://www.instagram.com/_vovk.mark_/"
+              href="https://www.instagram.com/smartrun.volunteers/"
+              target="_blank"
             >
               <Instagram sx={{ fontSize: "60", color: [deepWater] }} />
             </IconButton>
-            <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+            <IconButton
+              sx={{ p: 0, marginLeft: "10px" }}
+              href="https://t.me/smart_volunteers"
+              target="_blank"
+            >
               <Telegram sx={{ fontSize: "60", color: [deepWater] }} />
             </IconButton>
-            <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+            <IconButton
+              sx={{ p: 0, marginLeft: "10px" }}
+              href="https://www.facebook.com/groups/1293506701339641"
+              target="_blank"
+            >
               <FacebookOutlined sx={{ fontSize: "60", color: [deepWater] }} />
             </IconButton>
           </Grid>
@@ -260,7 +269,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Smart Volunteers. {t("copyright")}
         </Typography>
       </Box>
-      <Box
+      <Box id="Contact1"
         sx={{
           display: {
             xs: "block",
@@ -277,7 +286,6 @@ export default function Footer() {
           textAlign: "center",
         }}
         component="footer"
-        id="mobile-footer"
       >
         <Typography
           sx={{
@@ -329,14 +337,23 @@ export default function Footer() {
           >
             <IconButton
               sx={{ p: 0, marginLeft: "10px" }}
-              href="https://www.instagram.com/_vovk.mark_/"
+              href="https://www.instagram.com/smartrun.volunteers/"
+              target="_blank"
             >
               <Instagram sx={{ fontSize: "60", color: [deepWater] }} />
             </IconButton>
-            <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+            <IconButton
+              sx={{ p: 0, marginLeft: "10px" }}
+              href="https://t.me/smart_volunteers"
+              target="_blank"
+            >
               <Telegram sx={{ fontSize: "60", color: [deepWater] }} />
             </IconButton>
-            <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+            <IconButton
+              sx={{ p: 0, marginLeft: "10px" }}
+              href="https://www.facebook.com/groups/1293506701339641"
+              target="_blank"
+            >
               <FacebookOutlined sx={{ fontSize: "60", color: [deepWater] }} />
             </IconButton>
           </Grid>

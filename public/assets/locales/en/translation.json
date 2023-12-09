@@ -45,5 +45,10 @@
   "Cancel":"Cancel",
   "Section":"Section",
   "Submit":"Submit",
-  "Experience_education":"Education and experience"
+  "Message":"Message",
+  "Experience_education":"Education and experience",
+
+  "Works":"Works",
+  "About":"About",
+  "Contact":"Contact"
 }
