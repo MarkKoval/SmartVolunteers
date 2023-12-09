@@ -34,14 +34,20 @@ export default function Footer() {
     try {
       setSuccessOpen(true);
       setTimeout(() => setSuccessOpen(false), 5000);
-      const response = await fetch("http://localhost:5000/submit-to-email", {
-        method: "POST",
-        
+      const response = await axios.post("http://192.168.31.224:5000/submit-to-email", data, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
       });
+      // const response = await fetch("http://localhost:5000/submit-to-email", {
+      //   method: "POST",
+        
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // });
+      console.log("Data submitted to Mail:", data);
     } catch (error) {
       console.error("Error:", error);
       setErrorMessage("An error occurred during form submission.");

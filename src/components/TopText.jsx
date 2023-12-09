@@ -37,17 +37,22 @@ export default function TopText() {
     try {
       setSuccessOpen(true);
       setTimeout(() => setSuccessOpen(false), 5000);
-      const response = await fetch(
-        "http://localhost:5000/submit-to-google-sheets",
-        {
-          method: "POST",
+      const response = await axios.post("http://192.168.31.224:5000/submit-to-google-sheets", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      // const response = await fetch(
+      //   "http://localhost:5000/submit-to-google-sheets",
+      //   {
+      //     method: "POST",
           
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(data),
+      //   }
+      // );
       console.log("Data submitted to Google Sheets:", data);
     } catch (error) {
       console.error("Error:", error);
@@ -372,10 +377,6 @@ export default function TopText() {
                 alignItems="center"
               >
                 <Grid item xs={1}>
-                  {/* <Checkbox
-                    size="medium"
-                    {...register("validation", { required: true })}
-                  /> */}
                   <Radio {...register("validation", { required: true })} size="medium"/>
                 </Grid>
                 <Grid item xs={11}>

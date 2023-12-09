@@ -4,12 +4,13 @@ import {
   Button,
   Grid,
   Snackbar,
-  TextField,
+  input,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { deepWater, sea } from "./components/constants";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 /* eslint-disable */
 
@@ -26,20 +27,23 @@ function DataCollectionForm() {
 
   const onSubmitToEmail = async (data) => {
     try {
-      setSuccessOpen(true);
-      setTimeout(() => setSuccessOpen(false), 5000);
-      const response = await fetch("http://localhost:5000/submit-to-email", {
-        method: "POST",
-       
+      const after = JSON.stringify(data);
+      const response = await axios.post("http://192.168.31.224:5000/submit-to-email", data, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
       });
+      console.log("Data submitted to Mail:", data);
+      setSuccessOpen(true);
+      setTimeout(() => setSuccessOpen(false), 5000);
+
+      
+      console.log("After JSON.stringify(data):", after);
+      response.status;
+
+      
     } catch (error) {
-      console.error("Error:", error);
-      setErrorMessage("An error occurred during form submission.");
-      setErrorOpen(true);
+      console.log("Error - ", error); // true
     }
   };
 
@@ -50,7 +54,7 @@ function DataCollectionForm() {
           {/* First Row in First Column */}
           <Grid container spacing={4}>
             <Grid item xs={6}>
-              <TextField
+              <input
                 {...register("name", { required: true })}
                 placeholder="Name"
                 InputProps={{
@@ -67,7 +71,7 @@ function DataCollectionForm() {
               />
             </Grid>
             <Grid item xs={6}>
-              <TextField
+              <input
                 {...register("email", { required: true })}
                 placeholder="Email"
                 InputProps={{
@@ -86,7 +90,7 @@ function DataCollectionForm() {
           </Grid>
           {/* Second Row in First Column */}
           <Grid item xs={12}>
-            <TextField
+            <input
               {...register("message", { required: true })}
               placeholder="Message"
               InputProps={{
@@ -120,6 +124,17 @@ function DataCollectionForm() {
             </Button>
           </Grid>
         </form>
+        <Button
+          variant="contained"
+          style={{
+            width: "6rem",
+            background: [sea],
+            color: "black",
+            borderRadius: "1rem",
+          }}
+        >
+          TESTTTTTTTTTTTTTTTTTTTT
+        </Button>
       </Grid>
       <Snackbar
         fullWidth
