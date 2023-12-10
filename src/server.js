@@ -9,12 +9,9 @@ const cors = require("cors");
 const app = express();
 app.use(bodyParser.json());
 
-cron.schedule('*/10 * * * *', function () {
-  console.log("Running a task every 10 minutes");
-  app.use(express.static(path.join(__dirname, "..", "build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "build", "index.html"));
-  });
+app.use(express.static(path.join(__dirname, "..", "build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
 app.use((req, res, next) => {
