@@ -3,10 +3,19 @@ const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const path = require("path");
+const cron = require("node-cron");
 const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+
+cron.schedule('*/10 * * * *', function () {
+  console.log("Running a task every 10 minutes");
+  app.use(express.static(path.join(__dirname, "..", "build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+  });
+});
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); // or specify a domain instead of '*'
@@ -17,12 +26,6 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
 });
-
-app.use(express.static(path.join(__dirname, "..", "build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
-}); 
 
 // Load client secrets from a local file.
 const auth = new google.auth.GoogleAuth({

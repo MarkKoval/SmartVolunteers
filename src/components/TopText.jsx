@@ -20,6 +20,7 @@ import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { DatePicker } from "@mui/x-date-pickers";
 
 /* eslint-disable */
 
@@ -47,7 +48,7 @@ export default function TopText() {
       //   "http://localhost:5000/submit-to-google-sheets",
       //   {
       //     method: "POST",
-          
+
       //     headers: {
       //       "Content-Type": "application/json",
       //     },
@@ -61,7 +62,6 @@ export default function TopText() {
       console.error("Error:", error);
       setErrorMessage("An error occurred during form submission.");
       setErrorOpen(true);
-      
     }
   };
 
@@ -82,7 +82,7 @@ export default function TopText() {
   return (
     <Box
       sx={{
-        height: { xs: "450px", md:"500px", lg: "900px" },
+        height: { xs: "450px", md: "500px", lg: "900px" },
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.627), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
@@ -181,8 +181,8 @@ export default function TopText() {
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  fullWidth
                   type="date"
+                  fullWidth
                   {...register("birthday", { required: true })}
                   placeholder={t("Birthday")}
                 />
@@ -381,7 +381,10 @@ export default function TopText() {
                 alignItems="center"
               >
                 <Grid item xs={1}>
-                  <Radio {...register("validation", { required: true })} size="medium"/>
+                  <Radio
+                    {...register("validation", { required: true })}
+                    size="medium"
+                  />
                 </Grid>
                 <Grid item xs={11}>
                   <Typography
@@ -415,7 +418,10 @@ export default function TopText() {
                     size="medium"
                     {...register("validation", { required: true })}
                   /> */}
-                  <Radio {...register("validation", { required: true })} size="medium"/>
+                  <Radio
+                    {...register("validation", { required: true })}
+                    size="medium"
+                  />
                 </Grid>
                 <Grid item xs={12}>
                   <Typography
@@ -431,9 +437,7 @@ export default function TopText() {
             </Grid>
 
             <DialogActions>
-              <Button type="submit">
-                {t("Submit")}
-              </Button>
+              <Button type="submit">{t("Submit")}</Button>
               <Button onClick={handleClose}>{t("Cancel")}</Button>
             </DialogActions>
           </form>
