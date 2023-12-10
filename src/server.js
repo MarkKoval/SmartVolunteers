@@ -105,8 +105,8 @@ app.post("/submit-to-email", async (req, res) => {
     // Send email
     const mailOptions = {
       from: "smart.volunteers.ua@gmail.com", // sender's email address
-      to: "smart.volunteers.ua@gmail.com", // recipient's email address
-      subject: "Message from Smart Volunteers",
+      to: ["smart.volunteers.ua@gmail.com", email], // recipient's email address
+      subject: "Your Message to Smart Volunteers",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `
       <!DOCTYPE html>
