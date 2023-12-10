@@ -16,6 +16,7 @@
     "axios": "^1.6.2",
     "cors": "^2.8.5",
     "dayjs": "^1.11.10",
+    "express-handlebars": "^7.1.2",
     "googleapis": "^105.0.0",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
