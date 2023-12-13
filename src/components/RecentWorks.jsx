@@ -3,8 +3,9 @@ import { images } from "./constants";
 
 export default function RecentWorks() {
   return (
-    <Container
-      sx={{display:{xs:"none",md:"none", lg:"block", xl:"block"},
+    <Container id="Works"
+      sx={{
+        display: { xs: "none",sm:"block", md: "block", lg: "block", xl: "block" },
         py: 6,
       }}
       maxWidth="auto"
@@ -18,12 +19,14 @@ export default function RecentWorks() {
           justifyContent: "center",
           paddingLeft: "10%",
           paddingRight: "10%",
+          
         }}
       >
         {images.map((image) => (
           <Grid item key={image} xs={10} sm={6} md={4}>
             <Card
               sx={{
+                boxShadow: 20,
                 height: "100%",
                 display: "flex",
                 flexDirection: "column",
@@ -35,6 +38,7 @@ export default function RecentWorks() {
                 sx={{
                   borderRadius: "5%",
                   pt: "100%",
+                  loading: "lazy",
                 }}
                 image={image}
               />

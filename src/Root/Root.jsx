@@ -5,7 +5,6 @@ import { Box } from "@mui/material";
 import TopText from "../components/TopText";
 import Introducing from "../components/Introducing";
 import Cards from "../components/Cards";
-import FooterPC from "../components/footer_pc";
 import MapPC from "../components/map_pc";
 import AboutUs from "../components/AboutUs";
 import RecentWorksText from "../components/RecentWorksText";
@@ -13,9 +12,9 @@ import RecentWorks from "../components/RecentWorks";
 import TextCarousel from "../components/textcarousel";
 import { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/system";
-import FooterMobile from "../components/footer_mobile";
-import { Photo } from "@mui/icons-material";
 import PhotoCarousel from "../components/photocarousel";
+import Footer from "../components/footer";
+import { Helmet } from "react-helmet";
 
 const theme = createTheme({
   breakpoints: {
@@ -34,6 +33,17 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box position="static">
+        <Helmet>
+          <title>Smart Volunteers</title>
+          <meta name="description" content="Smart Volunteers is a dynamic and compassionate organization dedicated to mobilizing enthusiastic volunteers for meaningful community impact. Our mission is to harness the power of intelligence, innovation, and heart to create positive change in the world through volunteerism. Join us in making a smarter, kinder, and better future for all." />
+          <meta name="keywords" content="Smart Volunteers, dynamic organization, compassionate organization, enthusiastic volunteers, meaningful community impact, intelligence, innovation, heart, positive change, world, volunteerism, smarter future, kinder future, better future, Vovk Mark, Koval Mark, volunteer organization, community impact, volunteer opportunities, volunteer work, volunteer programs, volunteer projects, volunteer recruitment, volunteer mobilization, volunteer engagement, volunteer management, volunteer coordination, volunteer training, volunteer development, volunteer networking" />
+          <meta name="author" content="Koval Mark" />
+          <meta property="og:title" content="Smart Volunteers" />
+          <meta
+            property="og:description"
+            content="Smart Volunteers is a dynamic and compassionate organization dedicated to mobilizing enthusiastic volunteers for meaningful community impact. Our mission is to harness the power of intelligence, innovation, and heart to create positive change in the world through volunteerism. Join us in making a smarter, kinder, and better future for all."
+          />
+        </Helmet>
         <Header />
         <TopText />
         <Introducing />
@@ -53,8 +63,7 @@ export default function App() {
         </Box>
         <AboutUs />
         <MapPC />
-        <FooterPC />
-        <FooterMobile />
+        <Footer />
       </Box>
     </ThemeProvider>
   );
