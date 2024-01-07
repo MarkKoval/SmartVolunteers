@@ -35,10 +35,24 @@ export default function Cards() {
           <Card
             sx={{
               height: "100%",
+              minWidth: {
+                xs: "150px",
+                sm: "220px",
+                md: "250px",
+                lg: "300px",
+                xl: "300px",
+              },
+              minHeight: {
+                xs: "620px",
+                sm: "650px",
+                md: "620px",
+                lg: "620px",
+                xl: "620px",
+              },
               display: "flex",
               flexDirection: "column",
-              boxShadow:15,
-              borderRadius:"2%"
+              boxShadow: 15,
+              borderRadius: "2%",
             }}
           >
             <CardMedia
@@ -83,11 +97,26 @@ export default function Cards() {
         <Grid item xs={10} sm={6} md={3.3}>
           <Card
             sx={{
+              minWidth: {
+                xs: "150px",
+                sm: "220px",
+                md: "250px",
+                lg: "300px",
+                xl: "300px",
+              },
+              minHeight: {
+                xs: "620px",
+                sm: "650px",
+                md: "620px",
+                lg: "620px",
+                xl: "620px",
+              },
+
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              boxShadow:15,
-              borderRadius:"2%"
+              boxShadow: 15,
+              borderRadius: "2%",
             }}
           >
             <CardMedia
@@ -132,11 +161,25 @@ export default function Cards() {
         <Grid item xs={10} sm={6} md={3.3}>
           <Card
             sx={{
-              
+              minWidth: {
+                xs: "150px",
+                sm: "220px",
+                md: "250px",
+                lg: "300px",
+                xl: "300px",
+              },
+              minHeight: {
+                xs: "620px",
+                sm: "650px",
+                md: "620px",
+                lg: "620px",
+                xl: "620px",
+              },
+
               display: "flex",
               flexDirection: "column",
-              boxShadow:15,
-              borderRadius:"2%"
+              boxShadow: 15,
+              borderRadius: "2%",
             }}
           >
             <CardMedia
