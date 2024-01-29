@@ -27,6 +27,9 @@ const theme = createTheme({
       xl: 1536, // large screens
     },
   },
+  background: {
+    default: "white",
+  },
 });
 
 export default function App() {
