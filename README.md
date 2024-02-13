@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Smart Volunteers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Smart Volunteers, the leading platform connecting volunteers with meaningful opportunities in the Lviv community. We understand the importance of giving back and believe that everyone has the power to make a difference. With our user-friendly interface and extensive network of organizations, finding the perfect volunteer role has never been easier. Join us today and become a part of a community dedicated to making a positive impact.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User-Friendly Interface: Our platform offers a seamless user experience, making it easy for volunteers to navigate and find opportunities.
+- Extensive Network: We have a vast network of organizations, ensuring volunteers can find opportunities that align with their interests and skills.
+- Meaningful Opportunities: We prioritize connecting volunteers with opportunities that make a real difference in the Lviv community.
+- Passion Meets Purpose: At Smart Volunteers, we believe in the power of passion and purpose coming together to create positive change.
+## Technologies Used
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![Express Server](https://img.shields.io/badge/Express%20Server-Backend-brightgreen)](https://expressjs.com/)
+[![MaterialUI](https://img.shields.io/badge/MaterialUI-Visual%20Design-purple)](https://material-ui.com/)
+[![ReactJS](https://img.shields.io/badge/ReactJS-Powerful-orange)](https://reactjs.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Backbone-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML & CSS](https://img.shields.io/badge/HTML%20%26%20CSS-Visual%20Design-green)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Get Involved
+Join us today and become a part of a community dedicated to making a positive impact in Lviv. Whether you're passionate about education, environmental conservation, or social welfare, there's a volunteer opportunity waiting for you. Let's make a difference together!
+## Contributors
+Koval Mark - Developer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. Feel free to contribute and modify as per the terms of the license.
