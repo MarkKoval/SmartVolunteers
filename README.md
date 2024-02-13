@@ -12,6 +12,7 @@ Welcome to Smart Volunteers, the leading platform connecting volunteers with mea
 ## Technologies Used
 
 
+[![Express Server](https://img.shields.io/badge/Express%20Server-Backend-brightgreen)](https://expressjs.com/)
 [![MaterialUI](https://img.shields.io/badge/MaterialUI-Visual%20Design-purple)](https://material-ui.com/)
 [![ReactJS](https://img.shields.io/badge/ReactJS-Powerful-orange)](https://reactjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-Backbone-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
