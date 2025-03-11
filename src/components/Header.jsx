@@ -22,9 +22,41 @@ import i18next from "i18next";
 import Cookies from "js-cookie";
 import { useTranslation } from "react-i18next";
 
-const pages = ["Works", "About", "Contact"];
 
 function Header() {
+  const handleClickScrollWorks = () => {
+    const element1 = document.getElementById("Works");
+    if (element1) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element1.scrollIntoView({ behavior: "smooth" });
+    }
+    const element5 = document.getElementById("Works1");
+    if (element5) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element5.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleClickScrollContact = () => {
+    const element3 = document.getElementById("Contact");
+    if (element3) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element3.scrollIntoView({ behavior: "smooth" });
+    }
+    const element4 = document.getElementById("Contact1");
+    if (element4) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element4.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const handleClickScrollAbout = () => {
+    const element2 = document.getElementById("About");
+    if (element2) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element2.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const { t } = useTranslation();
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -65,6 +97,20 @@ function Header() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <Box
+            sx={{
+              display: {
+                xs: "block",
+                sm: "block",
+                md: "block",
+                lg: "block",
+                xl: "block",
+              },
+            }}
+          >
+            <Icon style={{ height: "2.5rem", width: "auto" }} />
+          </Box>
+
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -93,51 +139,105 @@ function Header() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" fontFamily="Nunito">
-                    {page}
-                  </Typography>
-                </MenuItem>
-              ))}
+              <MenuItem fontFamily="Nunito" onClick={handleCloseNavMenu}>
+                <Typography
+                  textAlign="center"
+                  fontFamily="Nunito"
+                  onClick={handleClickScrollWorks}
+                >
+                  {t("Works")}
+                </Typography>
+              </MenuItem>
+              <MenuItem fontFamily="Nunito" onClick={handleCloseNavMenu}>
+                <Typography
+                  textAlign="center"
+                  fontFamily="Nunito"
+                  onClick={handleClickScrollAbout}
+                >
+                  {t("About")}
+                </Typography>
+              </MenuItem>
+              <MenuItem fontFamily="Nunito" onClick={handleCloseNavMenu}>
+                <Typography
+                  textAlign="center"
+                  fontFamily="Nunito"
+                  onClick={handleClickScrollContact}
+                >
+                  {t("Contact")}
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
-          <Icon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-            style={{ height: "3rem", width: "auto" }}
-          />
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: [sea], display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button
+              onClick={handleClickScrollWorks}
+              sx={{
+                my: 2,
+                color: [sea],
+                display: "block",
+                fontFamily: "Nunito",
+              }}
+            >
+              {t("Works")}
+            </Button>
+            <Button
+              onClick={handleClickScrollAbout}
+              sx={{
+                my: 2,
+                color: [sea],
+                display: "block",
+                fontFamily: "Nunito",
+              }}
+            >
+              {t("About")}
+            </Button>
+            <Button
+              onClick={handleClickScrollContact}
+              sx={{
+                my: 2,
+                color: [sea],
+                display: "block",
+                fontFamily: "Nunito",
+              }}
+            >
+              {t("Contact")}
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip>
               <IconButton
                 sx={{ p: 0, marginLeft: "10px" }}
-                href="https://www.instagram.com/_vovk.mark_/"
+                href="https://www.instagram.com/smartrun.volunteers/"
+                target="_blank"
               >
                 <Instagram sx={{ fontSize: "60", color: [sea] }} />
               </IconButton>
-              <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+              <IconButton
+                sx={{ p: 0, marginLeft: "10px" }}
+                href="https://t.me/smart_volunteers"
+                target="_blank"
+              >
                 <Telegram sx={{ fontSize: "60", color: [sea] }} />
               </IconButton>
-              <IconButton sx={{ p: 0, marginLeft: "10px" }}>
+              <IconButton
+                sx={{ p: 0, marginLeft: "10px" }}
+                href="https://www.facebook.com/groups/1293506701339641"
+                target="_blank"
+              >
                 <FacebookOutlined sx={{ fontSize: "60", color: [sea] }} />
               </IconButton>
             </Tooltip>
             <Tooltip title={t("language")} sx={{ p: 0 }}>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, marginLeft: "30px" }}>
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0, marginLeft: "30px" }}
+              >
                 <LanguageOutlined sx={{ fontSize: "30px", color: [sea] }} />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"

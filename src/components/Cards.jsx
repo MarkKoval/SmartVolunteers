@@ -9,9 +9,9 @@ import {
 import { deepWater } from "./constants";
 import { useTranslation } from "react-i18next";
 
-import CardImage1 from "../components/CardImages/1.png";
-import CardImage2 from "../components/CardImages/2.png";
-import CardImage3 from "../components/CardImages/3.png";
+import CardImage1 from "../components/CardImages/1.webp";
+import CardImage2 from "../components/CardImages/2.webp";
+import CardImage3 from "../components/CardImages/3.webp";
 
 export default function Cards() {
   const { t } = useTranslation();
@@ -35,9 +35,24 @@ export default function Cards() {
           <Card
             sx={{
               height: "100%",
+              minWidth: {
+                xs: "150px",
+                sm: "220px",
+                md: "250px",
+                lg: "300px",
+                xl: "300px",
+              },
+              minHeight: {
+                xs: "620px",
+                sm: "650px",
+                md: "620px",
+                lg: "620px",
+                xl: "620px",
+              },
               display: "flex",
               flexDirection: "column",
-              boxShadow:3
+              boxShadow: 15,
+              borderRadius: "2%",
             }}
           >
             <CardMedia
@@ -82,10 +97,26 @@ export default function Cards() {
         <Grid item xs={10} sm={6} md={3.3}>
           <Card
             sx={{
+              minWidth: {
+                xs: "150px",
+                sm: "220px",
+                md: "250px",
+                lg: "300px",
+                xl: "300px",
+              },
+              minHeight: {
+                xs: "620px",
+                sm: "650px",
+                md: "620px",
+                lg: "620px",
+                xl: "620px",
+              },
+
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              boxShadow:3
+              boxShadow: 15,
+              borderRadius: "2%",
             }}
           >
             <CardMedia
@@ -130,10 +161,25 @@ export default function Cards() {
         <Grid item xs={10} sm={6} md={3.3}>
           <Card
             sx={{
-              height: "100%",
+              minWidth: {
+                xs: "150px",
+                sm: "220px",
+                md: "250px",
+                lg: "300px",
+                xl: "300px",
+              },
+              minHeight: {
+                xs: "620px",
+                sm: "650px",
+                md: "620px",
+                lg: "620px",
+                xl: "620px",
+              },
+
               display: "flex",
               flexDirection: "column",
-              boxShadow:3
+              boxShadow: 15,
+              borderRadius: "2%",
             }}
           >
             <CardMedia
