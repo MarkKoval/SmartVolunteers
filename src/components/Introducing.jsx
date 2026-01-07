@@ -3,17 +3,17 @@ import { deepWater } from "./constants";
 
 export default function Introducing() {
   return (
-    <Box paddingTop="2%" paddingBottom="2%">
+    <Box paddingTop={{ xs: 4, md: 6 }} paddingBottom={{ xs: 4, md: 6 }}>
       <Typography
+        className="fade-in-up"
         sx={{
-          
           color: [deepWater],
           textAlign: "center",
-          paddingLeft: "20%",
-          paddingRight: "20%",
-          paddingTop: "50px",
-          fontSize: "25px",
+          paddingX: { xs: 3, md: 20 },
+          paddingTop: { xs: 3, md: 6 },
+          fontSize: { xs: "1.05rem", sm: "1.2rem", md: "1.6rem" },
           fontFamily: "Nunito",
+          lineHeight: 1.7,
         }}
       >
         Introducing Smart Volunteers, the leading platform connecting volunteers

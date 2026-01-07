@@ -22,17 +22,16 @@ export default function FooterBox() {
 
   return (
     <Box
-      sx={{ bgcolor: [wave], paddingTop: 12, paddingBottom: 6 }}
+      sx={{ bgcolor: [wave], paddingTop: { xs: 6, md: 12 }, paddingBottom: 6 }}
       component="footer"
     >
-      <Grid container spacing={3}>
+      <Grid container spacing={4} alignItems="flex-start" justifyContent="center">
         {/* First Column */}
-        <Grid item xs={1}></Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={6} lg={5}>
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* First Row in First Column */}
             <Grid container spacing={4}>
-              <Grid item xs={6}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   InputProps={{
                     style: {
@@ -48,7 +47,7 @@ export default function FooterBox() {
                   {...register("Name", {})}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={12} sm={6}>
                 <TextField
                   InputProps={{
                     style: {
@@ -66,7 +65,7 @@ export default function FooterBox() {
               </Grid>
             </Grid>
             {/* Second Row in First Column */}
-            <Grid item xs={12}>
+            <Box>
               <TextField
                 InputProps={{
                   style: {
@@ -83,31 +82,36 @@ export default function FooterBox() {
                 type="text"
                 {...register("Message", {})}
               />
-            </Grid>
+            </Box>
             {/* Third Row in First Column */}
-            <Grid item xs={12} textAlign="center" marginTop="1rem">
+            <Box textAlign="center" marginTop="1rem">
               <Button
-              
                 variant="contained"
                 type="submit"
-                style={{
-                  width:"6rem",
+                sx={{
+                  width: "7rem",
                   background: [sea],
                   color: "black",
-                  borderRadius: "1rem",
+                  borderRadius: "999px",
+                  fontFamily: "Nunito",
+                  fontWeight: 600,
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 12px 24px rgba(10, 47, 71, 0.2)",
+                  },
                 }}
               >
                 Send
               </Button>
-            </Grid>
+            </Box>
           </form>
         </Grid>
-        <Grid item xs={1}></Grid>
         {/* Second Column */}
-        <Grid item xs={6} container direction="row" alignItems="Center">
+        <Grid item xs={12} md={6} lg={5} container direction="row" alignItems="center">
           <Typography
             sx={{
-              fontSize: "40px",
+              fontSize: { xs: "2rem", md: "2.5rem" },
               fontFamily: "Nunito",
               color: [deepWater],
             }}
@@ -115,15 +119,14 @@ export default function FooterBox() {
             Contact Us Now
             <Typography
               sx={{
-                fontSize: "18px",
+                fontSize: { xs: "1rem", md: "1.1rem" },
                 fontFamily: "Nunito",
                 paddingTop: "1%",
                 color: [sea],
               }}
             >
-              Fill out the from below to get in touch with us. We are here to
-              answer any
-              <br /> questions you may have and provide the support you need.
+              Fill out the form below to get in touch with us. We are here to
+              answer any questions you may have and provide the support you need.
             </Typography>
           </Typography>
         </Grid>
@@ -135,39 +138,44 @@ export default function FooterBox() {
         marginTop="5rem"
         marginBottom="0"
         paddingBottom="0"
+        alignItems="center"
       >
-        <Grid xs={1} />
+        <Grid item xs={12} md={2} />
         <Grid
-          xs={4}
+          item
+          xs={12}
+          md={4}
           container
           direction="row"
-          justifyContent="flex-start"
+          justifyContent={{ xs: "center", md: "flex-start" }}
           alignItems="center"
         >
           <Logo style={{ height: "4rem", width: "auto" }} />
         </Grid>
-        <Grid xs={2}></Grid>
+        <Grid item xs={12} md={2}></Grid>
         <Grid
-          xs={4}
+          item
+          xs={12}
+          md={4}
           container
           direction="row"
-          justifyContent="flex-end"
+          justifyContent={{ xs: "center", md: "flex-end" }}
           alignItems="center"
         >
           <IconButton
             sx={{ p: 0, marginLeft: "10px" }}
             href="https://www.instagram.com/_vovk.mark_/"
           >
-            <Instagram sx={{ fontSize: "60", color: [deepWater] }} />
+            <Instagram sx={{ fontSize: { xs: 28, md: 36 }, color: [deepWater] }} />
           </IconButton>
           <IconButton sx={{ p: 0, marginLeft: "10px" }}>
-            <Telegram sx={{ fontSize: "60", color: [deepWater] }} />
+            <Telegram sx={{ fontSize: { xs: 28, md: 36 }, color: [deepWater] }} />
           </IconButton>
           <IconButton sx={{ p: 0, marginLeft: "10px" }}>
-            <FacebookOutlined sx={{ fontSize: "60", color: [deepWater] }} />
+            <FacebookOutlined sx={{ fontSize: { xs: 28, md: 36 }, color: [deepWater] }} />
           </IconButton>
         </Grid>
-        <Grid xs={1} />
+        <Grid item xs={12} md={2} />
       </Grid>
 
       <Typography variant="body2" align="center" gutterBottom color={deepWater}>

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import { Box, Button, Grid, Paper, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import "./TextCarousel.css"; // Import your CSS file with styles
 
@@ -11,7 +11,7 @@ Smart Volunteers is an amazing organization with a team of dedicated and passion
 
 const message2 = `
 I've had the privilege of witnessing Smart Volunteers in action, and I must say, their unwavering dedication to improving lives in Lviv is truly inspiring. It's heartwarming to see a group of individuals come together and create such a positive impact. Kudos to Smart Volunteers for their incredible work!<br /><br />
-  <div style="text-align: center; font-family:"Nunito"">— Inna</div>
+  <div style="text-align: center; font-family: Nunito;">— Inna</div>
 `;
 
 const message3 = `
@@ -70,7 +70,7 @@ const TextCarousel = () => {
         alignItems="center"
         flexDirection="row"
       >
-        <Grid xs={1}>
+        <Grid item xs={1}>
           <Button
             onClick={handlePrev}
             startIcon={<NavigateBefore />}
@@ -79,16 +79,23 @@ const TextCarousel = () => {
             }}
           ></Button>
         </Grid>
-        <Grid xs={10}>
+        <Grid item xs={10}>
           <Box
             elevation={3}
-            style={{ padding: "20px", borderRadius: "15px" }}
+            className="fade-in-up"
+            style={{
+              padding: "24px",
+              borderRadius: "20px",
+              background: "white",
+              boxShadow: "0 16px 40px rgba(10, 47, 71, 0.15)",
+            }}
           >
             <Typography
               variant="h5"
-              style={{
-                fontFamily:"Nunito",
+              sx={{
+                fontFamily: "Nunito",
                 textAlign: "center",
+                fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" },
                 opacity: isAnimating ? 0 : 1,
                 transition: "opacity 1s ease",
               }}
@@ -105,7 +112,7 @@ const TextCarousel = () => {
             ))}
           </div>
         </Grid>
-        <Grid xs={1}>
+        <Grid item xs={1}>
           <Button
             onClick={handleNext}
             endIcon={<NavigateNext />}

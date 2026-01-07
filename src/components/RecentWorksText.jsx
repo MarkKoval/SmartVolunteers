@@ -5,12 +5,17 @@ export default function RecentWorksText() {
   return (
     <Box
       sx={{
-        paddingLeft: "10%",
-        paddingTop: "5%",
+        paddingLeft: { xs: 3, md: "10%" },
+        paddingTop: { xs: 4, md: "5%" },
       }}
     >
       <Typography
-        sx={{ fontSize: "40px", fontFamily: "Nunito", color: [deepWater] }}
+        className="fade-in-up"
+        sx={{
+          fontSize: { xs: "2rem", md: "2.5rem" },
+          fontFamily: "Nunito",
+          color: [deepWater],
+        }}
       >
         Recent Work
       </Typography>
