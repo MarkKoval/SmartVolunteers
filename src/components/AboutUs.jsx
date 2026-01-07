@@ -5,18 +5,25 @@ export default function AboutUs() {
   return (
     <Box
       sx={{
-        paddingLeft: "10%",
-        paddingTop: "4%",
+        paddingLeft: { xs: 3, md: "10%" },
+        paddingTop: { xs: 4, md: "4%" },
+        paddingBottom: { xs: 4, md: 6 },
+        maxWidth: "900px",
       }}
     >
       <Typography
-        sx={{ fontSize: "40px", fontFamily: "Nunito", color: [deepWater] }}
+        className="fade-in-up"
+        sx={{
+          fontSize: { xs: "2rem", md: "2.5rem" },
+          fontFamily: "Nunito",
+          color: [deepWater],
+        }}
       >
         About us
       </Typography>
       <Typography
         sx={{
-          fontSize: "18px",
+          fontSize: { xs: "1rem", md: "1.1rem" },
           fontFamily: "Nunito",
           paddingTop: "1%",
           color: [deepWater],
@@ -26,18 +33,18 @@ export default function AboutUs() {
       </Typography>
       <Typography
         sx={{
-          fontSize: "18px",
+          fontSize: { xs: "1rem", md: "1.1rem" },
           fontFamily: "Nunito",
           paddingTop: "1%",
           color: [deepWater],
+          lineHeight: 1.7,
         }}
       >
         We are dedicated volunteer organization located in Lviv, "ADRESS". Our
         mission is to connect passionate individuals with
-        <br />
         meaningful volunteer opportunities. With a strong commitment to making a
-        positive impact in our community, we strive
-        <br /> to create a better world through volunteerism.
+        positive impact in our community, we strive to create a better world
+        through volunteerism.
       </Typography>
     </Box>
   );

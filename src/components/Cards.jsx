@@ -16,9 +16,9 @@ export default function Cards() {
   return (
     <Container
       sx={{
-        py: 6,
+        py: { xs: 4, md: 6 },
       }}
-      maxWidth="auto"
+      maxWidth="lg"
     >
       <Grid
         container
@@ -29,18 +29,26 @@ export default function Cards() {
           justifyContent: "center",
         }}
       >
-        <Grid item xs={10} sm={6} md={3.3}>
+        <Grid item xs={12} sm={6} md={4}>
           <Card
+            className="fade-in-up"
             sx={{
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              borderRadius: "24px",
+              boxShadow: "0 18px 40px rgba(10, 47, 71, 0.15)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              "&:hover": {
+                transform: "translateY(-8px)",
+                boxShadow: "0 24px 50px rgba(10, 47, 71, 0.22)",
+              },
             }}
           >
             <CardMedia
               component="div"
               sx={{
-                pt: "100%",
+                pt: "70%",
               }}
               image={CardImage1}
             />
@@ -68,18 +76,26 @@ export default function Cards() {
           </Card>
         </Grid>
 
-        <Grid item xs={10} sm={6} md={3.3}>
+        <Grid item xs={12} sm={6} md={4}>
           <Card
+            className="fade-in-up"
             sx={{
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              borderRadius: "24px",
+              boxShadow: "0 18px 40px rgba(10, 47, 71, 0.15)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              "&:hover": {
+                transform: "translateY(-8px)",
+                boxShadow: "0 24px 50px rgba(10, 47, 71, 0.22)",
+              },
             }}
           >
             <CardMedia
               component="div"
               sx={{
-                pt: "100%",
+                pt: "70%",
               }}
               image={CardImage2}
             />
@@ -106,18 +122,26 @@ export default function Cards() {
           </Card>
         </Grid>
 
-        <Grid item xs={10} sm={6} md={3.3}>
+        <Grid item xs={12} sm={6} md={4}>
           <Card
+            className="fade-in-up"
             sx={{
               height: "100%",
               display: "flex",
               flexDirection: "column",
+              borderRadius: "24px",
+              boxShadow: "0 18px 40px rgba(10, 47, 71, 0.15)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              "&:hover": {
+                transform: "translateY(-8px)",
+                boxShadow: "0 24px 50px rgba(10, 47, 71, 0.22)",
+              },
             }}
           >
             <CardMedia
               component="div"
               sx={{
-                pt: "100%",
+                pt: "70%",
               }}
               image={CardImage3}
             />

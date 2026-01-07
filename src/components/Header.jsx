@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { FacebookOutlined, Instagram, Telegram } from "@mui/icons-material";
-import { deepWater, sea} from "./constants";
+import { sea } from "./constants";
 import {ReactComponent as Icon} from "./icon.svg"
 
 
@@ -29,9 +29,13 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" style={{
-      background: [deepWater]
-    }}>
+    <AppBar
+      position="static"
+      sx={{
+        background: "linear-gradient(120deg, #0a2f47 0%, #0f3a54 40%, #145d7a 100%)",
+        boxShadow: "none",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
@@ -71,7 +75,11 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <Icon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} style={{ height:"3rem", width:"auto"}}/>
+          <Icon
+            className="soft-float"
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            style={{ height: "3rem", width: "auto" }}
+          />
           <Typography
             variant="h5"
             noWrap
@@ -95,7 +103,18 @@ function Header() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: [sea], display: "block" }}
+                sx={{
+                  my: 2,
+                  color: [sea],
+                  display: "block",
+                  fontFamily: "Nunito",
+                  fontSize: "1rem",
+                  transition: "transform 0.3s ease, opacity 0.3s ease",
+                  "&:hover": {
+                    opacity: 0.8,
+                    transform: "translateY(-2px)",
+                  },
+                }}
               >
                 {page}
               </Button>
@@ -105,16 +124,35 @@ function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip>
               <IconButton
-                sx={{ p: 0, marginLeft: "10px" }}
+                sx={{
+                  p: 0,
+                  marginLeft: "10px",
+                  transition: "transform 0.3s ease",
+                  "&:hover": { transform: "scale(1.08)" },
+                }}
                 href="https://www.instagram.com/_vovk.mark_/"
               >
-                <Instagram sx={{ fontSize: "60", color: [sea] }} />
+                <Instagram sx={{ fontSize: { xs: 28, md: 36 }, color: [sea] }} />
               </IconButton>
-              <IconButton sx={{ p: 0, marginLeft: "10px" }}>
-                <Telegram sx={{ fontSize: "60", color: [sea] }} />
+              <IconButton
+                sx={{
+                  p: 0,
+                  marginLeft: "10px",
+                  transition: "transform 0.3s ease",
+                  "&:hover": { transform: "scale(1.08)" },
+                }}
+              >
+                <Telegram sx={{ fontSize: { xs: 28, md: 36 }, color: [sea] }} />
               </IconButton>
-              <IconButton sx={{ p: 0, marginLeft: "10px" }}>
-                <FacebookOutlined sx={{ fontSize: "60", color: [sea] }} />
+              <IconButton
+                sx={{
+                  p: 0,
+                  marginLeft: "10px",
+                  transition: "transform 0.3s ease",
+                  "&:hover": { transform: "scale(1.08)" },
+                }}
+              >
+                <FacebookOutlined sx={{ fontSize: { xs: 28, md: 36 }, color: [sea] }} />
               </IconButton>
             </Tooltip>
           </Box>
